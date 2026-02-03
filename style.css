@@ -5,7 +5,7 @@
     --body-font: "Mona Sans", sans-serif;
 
     --black: #2b2b2b;
-    --pale: #eef3c2;
+    --pale: #e7f0c8;
     --white: #ffffff;
 }
 
@@ -19,6 +19,7 @@ body {
     background: var(--pale);
     line-height: calc(1.2*var(--spacing));
     padding: var(--spacing);
+    text-align: center;
 }
 
 h1 {
@@ -29,10 +30,27 @@ h1 {
 }
 
 header {
-    text-align: center;
     padding-block: calc(3*var(--spacing));
 }
 
 .placeholder {
-    
+    display: block;
+    inline-size: 100%;
+    block-size: calc(18*var(--spacing));
+    background: var(--white);
+    margin-block-start: calc(4*var(--spacing));
 }
+
+h2 {
+    font-size: calc(1.2*var(--spacing));
+    font-weight: 550;
+    line-height: calc(1.5*var(--spacing));
+    padding-block: calc(0.6*var(--spacing));
+/* !!! put each side on different container so that it looks equal */
+}
+
+.grid {
+
+}
+
+
