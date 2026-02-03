@@ -49,8 +49,33 @@ h2 {
 /* !!! put each side on different container so that it looks equal */
 }
 
-.grid {
-
+h3 {
+    font-size: calc(0.8*var(--spacing));
+    font-weight: 550;
+    line-height: calc(1.4*var(--spacing));
 }
 
+.image-controller {
+    inline-size: calc(7*var(--spacing));
+    block-size: auto;
+    overflow: hidden;
+}
+
+.image-box {
+    background: var(--white);
+    padding: calc(0.3*var(--spacing));
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.1*var(--spacing));
+    display: block;
+    block-size: inline-block;
+}
+
+.grid {
+    text-align: left;
+
+    display: grid;
+    grid-template-columns: calc(7.6*var(--spacing)) calc(8*var(--spacing));
+    grid-gap: calc(0.5*var(--spacing));
+}
 
