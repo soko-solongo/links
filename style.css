@@ -1,0 +1,10 @@
+:root{
+    --spacing: 1.5rem;
+    --body-font: "Poppins", sans-serif;
+
+    --black: #2b2b2b;
+    --pale: #eef3c2;
+    --white: #ffffff;
+}
+
+html{scroll-behavior: smooth;}
