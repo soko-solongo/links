@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root{
     --spacing: 1.5rem;
-    --body-font: "Poppins", sans-serif;
+    --body-font: "Mona Sans", sans-serif;
 
     --black: #2b2b2b;
     --pale: #eef3c2;
@@ -8,3 +10,29 @@
 }
 
 html{scroll-behavior: smooth;}
+
+body {
+    font-family: var(--body-font);
+    font-size: calc(0.7*var(--spacing));
+    font-weight: 400;
+    color: var(--black);
+    background: var(--pale);
+    line-height: calc(1.2*var(--spacing));
+    padding: var(--spacing);
+}
+
+h1 {
+    font-size: calc(2*var(--spacing));
+    font-weight: 550;
+    text-transform: uppercase;
+    line-height: calc(2.5*var(--spacing));
+}
+
+header {
+    text-align: center;
+    padding-block: calc(3*var(--spacing));
+}
+
+.placeholder {
+    
+}
