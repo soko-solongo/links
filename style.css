@@ -20,6 +20,7 @@ body {
     line-height: calc(1.2*var(--spacing));
     padding: var(--spacing);
     text-align: center;
+    margin-inline: auto;
 }
 
 h1 {
@@ -50,17 +51,33 @@ h2 {
 }
 
 h3 {
-    font-size: calc(0.8*var(--spacing));
-    font-weight: 550;
-    line-height: calc(1.4*var(--spacing));
+    font-size: calc(0.7*var(--spacing));
+    font-weight: 600;
+    line-height: calc(1*var(--spacing));
 }
 
+/* bunch of white containers */
+.grid {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(0.7*var(--spacing));
+    align-items: center;
+    justify-content: center;
+    padding-block: calc(2*var(--spacing));
+}
+
+/* <---- Content type: Image -----> */
+
+/* to control the size of img */
 .image-controller {
     inline-size: calc(7*var(--spacing));
-    block-size: auto;
+    block-size: 100%;
     overflow: hidden;
 }
 
+/* white container */
 .image-box {
     background: var(--white);
     padding: calc(0.3*var(--spacing));
@@ -71,11 +88,66 @@ h3 {
     block-size: inline-block;
 }
 
-.grid {
-    text-align: left;
+/* <---- Content type: Embed -----> */
 
-    display: grid;
-    grid-template-columns: calc(7.6*var(--spacing)) calc(8*var(--spacing));
-    grid-gap: calc(0.5*var(--spacing));
+/* to control the size of img */
+.embed-controller {
+    inline-size: calc(5*var(--spacing));
+    aspect-ratio: 1/1;
+    overflow: hidden;
 }
 
+/* white container */
+.embed-box {
+    background: var(--white);
+    padding: calc(0.3*var(--spacing));
+    padding-inline-end: calc(0.8*var(--spacing));
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: calc(0.3*var(--spacing));
+    /* display: block; */
+    block-size: inline-block;
+    position: relative;
+}
+
+/* play symbol */
+.embed-box::before {
+    content: "▶︎";
+    font-size: var(--spacing);
+    position: absolute;
+    top: 0.6em;
+    right: 6.1em;
+}
+
+
+/* <---- Content type: Link -----> */
+
+/* white container */
+.link-box {
+    background: var(--white);
+    padding: calc(0.3*var(--spacing));
+    padding-block-start: calc(2*var(--spacing));
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.1*var(--spacing));
+    display: block;
+    inline-size: calc(15*var(--spacing));
+    position: relative;
+}
+
+/* globe symbol */
+.link-box:before {
+    content: "🌐";
+    font-size: var(--spacing);
+    position: absolute;
+    top: 0.6em;
+    left: 0.4em;
+}
+
+
+
+section {
+    padding-block-start: calc(4*var(--spacing));
+}
