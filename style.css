@@ -180,3 +180,11 @@ a:hover {
 section {
     padding-block-start: calc(4*var(--spacing));
 }
+
+/* TASKS TO DO:
+- wobble the title 1
+- create messy clutter with existing media
+- put h2 into flexboxes
+- add shadows on white boxes
+- add media queries
+- apply flexbox to the footer */
