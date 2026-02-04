@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Paytone+One&display=swap');
 
 :root{
     --spacing: 1.5rem;
-    --body-font: "Mona Sans", sans-serif;
+    --head-font: "Paytone One", sans-serif;
+    --body-font: "Nunito", sans-serif;
 
     --black: #2b2b2b;
-    --pale: #f2ffcc;
-    --white: #ffffff;
+    --background: #b43c48;
+    --white: #f1f1f1;
+    --grey: #e0e0e0;
+    --pink: #E79FFF;
+    --yellow: #ffd06b;
+    --blue: #50eeff;
+    --green: #6feb6f;
+    --purple: #bfacff;
 }
 
 html{scroll-behavior: smooth;}
@@ -16,29 +23,26 @@ body {
     font-size: calc(0.7*var(--spacing));
     font-weight: 400;
     color: var(--black);
-    background: var(--pale);
-    line-height: calc(1.2*var(--spacing));
+    background: var(--background);
+    line-height: calc(1.1*var(--spacing));
     padding: var(--spacing);
     text-align: center;
     margin-inline: auto;
 }
 
 h1 {
-    font-size: calc(2*var(--spacing));
-    font-weight: 550;
+    font-family: var(--head-font);
+    font-size: calc(4*var(--spacing));
+    color: var(--pink);
     text-transform: uppercase;
-    line-height: calc(2.5*var(--spacing));
-}
-
-header {
-    padding-block: calc(3*var(--spacing));
+    line-height: calc(5*var(--spacing));
 }
 
 h2 {
-    font-size: calc(1.2*var(--spacing));
-    font-weight: 550;
-    line-height: calc(1.5*var(--spacing));
-    padding-block: calc(0.6*var(--spacing));
+    font-family: var(--head-font);
+    font-size: calc(1.4*var(--spacing));
+    line-height: calc(1.7*var(--spacing));
+    padding-block: calc(0.8*var(--spacing));
     display: inline-block;
 /* !!! put each side on different container so that it looks equal */
 }
@@ -53,6 +57,32 @@ h3 {
     font-size: calc(0.7*var(--spacing));
     font-weight: 600;
     line-height: calc(1*var(--spacing));
+}
+
+#white {
+    color: var(--white);
+    font-size: calc(0.8*var(--spacing));
+    line-height: calc(1.2*var(--spacing));
+}
+
+#green {
+    color: var(--green);
+}
+
+#blue {
+    color: var(--blue);
+}
+
+#pink {
+    color: var(--pink);
+}
+
+#yellow {
+    color: var(--yellow);
+}
+
+#purple {
+    color: var(--purple);
 }
 
 /* bunch of white containers */
@@ -78,7 +108,7 @@ h3 {
 
 /* white container */
 .image-box {
-    background: var(--white);
+    background: var(--grey);
     padding: calc(0.3*var(--spacing));
     display: flex;
     flex-direction: column;
@@ -98,7 +128,7 @@ h3 {
 
 /* white container */
 .embed-box {
-    background: var(--white);
+    background: var(--grey);
     padding: calc(0.3*var(--spacing));
     padding-inline-end: calc(0.8*var(--spacing));
     display: flex;
@@ -124,7 +154,7 @@ h3 {
 
 /* white container */
 .link-box {
-    background: var(--white);
+    background: var(--grey);
     padding-inline: calc(1.5*var(--spacing));
     padding-block: calc(0.6*var(--spacing));
 
@@ -143,7 +173,7 @@ h3 {
 
 /* white container */
 .text-box {
-    background: var(--white);
+    background: var(--grey);
     padding: calc(0.6*var(--spacing));
     padding-block-start: calc(2.8*var(--spacing));
 
@@ -174,20 +204,23 @@ a:hover {
 
 header,
 section {
-    padding-block-start: calc(4*var(--spacing));
     min-block-size: 100vh;
     block-size: auto;
     position: relative;
     overflow: hidden;
 }
 
+section {
+    padding-block-start: calc(6*var(--spacing));
+}
+
 .wobbly-text {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: calc(1.5*var(--spacing));
-    padding-block: var(--spacing);
+    padding-block: calc(2*var(--spacing));
 }
 
 .wobbly-text span {
@@ -231,7 +264,7 @@ footer {
 }
 
 .main-clutter {
-    margin-block: calc(6*var(--spacing));
+    margin-block: calc(10*var(--spacing));
     margin-inline: auto;
     inline-size: 80%;
     min-block-size: calc(35*var(--spacing));
@@ -280,6 +313,17 @@ footer {
     .clutter-1:nth-child():hover {
     transform: scale(1.1);
 } */
+
+@media (width>1000px) {
+    .wobbly-text {
+        flex-direction: row;
+        gap: calc(2*var(--spacing));
+    }
+
+    h2 {
+        transform: scale(1.3);
+    }
+}
 
 
 
