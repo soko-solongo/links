@@ -47,7 +47,14 @@ h2 {
     font-weight: 550;
     line-height: calc(1.5*var(--spacing));
     padding-block: calc(0.6*var(--spacing));
+    display: inline-block;
 /* !!! put each side on different container so that it looks equal */
+}
+
+.h2-line {
+    display: flex;
+    flex-direction: column;
+    gap: calc(6*var(--spacing));
 }
 
 h3 {
@@ -177,9 +184,34 @@ a:hover {
     opacity: 70%;
 }
 
+header,
 section {
     padding-block-start: calc(4*var(--spacing));
+    block-size: 100vh;
+
+    transition: 1s ease-in; 
+
+    /* animation: custom name | duration of one full cycle | timing function | iteration-count | delay */
+    animation: fadein 1s ease-in 1 0s;
 }
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    position: relative;
+    
+}
+
+
+
 
 /* TASKS TO DO:
 - wobble the title 1
