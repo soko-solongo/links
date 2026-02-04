@@ -34,14 +34,6 @@ header {
     padding-block: calc(3*var(--spacing));
 }
 
-.placeholder {
-    display: block;
-    inline-size: 100%;
-    block-size: calc(18*var(--spacing));
-    background: var(--white);
-    margin-block-start: calc(4*var(--spacing));
-}
-
 h2 {
     font-size: calc(1.2*var(--spacing));
     font-weight: 550;
@@ -92,7 +84,7 @@ h3 {
     flex-direction: column;
     gap: calc(0.1*var(--spacing));
     display: block;
-    block-size: inline-block;
+    display: inline-block;
 }
 
 /* <---- Content type: Embed -----> */
@@ -136,12 +128,8 @@ h3 {
     padding-inline: calc(1.5*var(--spacing));
     padding-block: calc(0.6*var(--spacing));
 
-    display: flex;
-    flex-direction: column;
-    gap: calc(0.1*var(--spacing));
     display: block;
     inline-size: inline-block;
-    position: relative;
 }
 
 /* globe symbol */
@@ -187,31 +175,16 @@ a:hover {
 header,
 section {
     padding-block-start: calc(4*var(--spacing));
-    block-size: 100vh;
-
-    transition: 1s ease-in; 
-
-    /* animation: custom name | duration of one full cycle | timing function | iteration-count | delay */
-    animation: fadein 1s ease-in 1 0s;
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.fade-in {
+    min-block-size: 100vh;
+    block-size: auto;
     position: relative;
+    overflow: hidden;
 }
 
 .wobbly-text {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: calc(1.5*var(--spacing));
     padding-block: var(--spacing);
@@ -239,13 +212,75 @@ section {
 .embed-box,
 .link-box,
 .text-box {
-    /* box-shadow: horizontal-offset vertical-offset blur-radius spread-radius color; */
-    box-shadow: 0 0 0.3em 0 #666666
+    /* box-shadow: horizontal-offset vertical-offset blur-radius spread-radius color + opacity; */
+    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.1);
 }
 
 footer {
     margin-block-start: calc(10*var(--spacing));
 }
+
+.clutter-1,
+.clutter-2,
+.clutter-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+}
+
+.main-clutter {
+    margin-block: calc(6*var(--spacing));
+    margin-inline: auto;
+    inline-size: 80%;
+    min-block-size: calc(35*var(--spacing));
+    text-align: left;
+    position: relative;
+}
+
+.clutter-1 {
+    z-index: 3;
+}
+
+.clutter-1 > :nth-child(odd) {
+    transform: translateY(-5em) rotate(15deg);
+}
+
+.clutter-1 > :nth-child(even) {
+    transform: translateY(-2em) rotate(-15deg);
+}
+
+.clutter-2 {
+    z-index: 1;
+}
+
+.clutter-2 > :nth-child(odd) {
+    transform: translateY(10em) rotate(15deg);
+}
+
+.clutter-2 > :nth-child(even) {
+    transform: translateY(-8em) rotate(-35deg);
+}
+
+.clutter-3 {
+    z-index: 2;
+    gap: calc(5*var(--spacing));
+}
+
+.clutter-3 > :nth-child(odd) {
+    transform: translateY(6em) rotate(15deg);
+}
+
+.clutter-3 > :nth-child(even) {
+    transform: translateY(1em) rotate(-5deg);
+}
+
+/* !!! need to add hover effect on white box that zooms in
+    .clutter-1:nth-child():hover {
+    transform: scale(1.1);
+} */
+
 
 
 
