@@ -5,7 +5,7 @@
     --body-font: "Mona Sans", sans-serif;
 
     --black: #2b2b2b;
-    --pale: #e7f0c8;
+    --pale: #f2ffcc;
     --white: #ffffff;
 }
 
@@ -207,7 +207,44 @@ section {
 
 .fade-in {
     position: relative;
-    
+}
+
+.wobbly-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(1.5*var(--spacing));
+    padding-block: var(--spacing);
+}
+
+.wobbly-text span {
+    display: inline-block;
+}
+
+/* translateY(value) moves the letter up or down. Negative number moves it up, and positive one moves it down */
+.wobbly-text span:nth-child(1) { 
+    transform: translateY(-1px) rotate(-5deg);
+}
+.wobbly-text span:nth-child(2) {
+    transform: translateY(2px) rotate(3deg);
+}
+.wobbly-text span:nth-child(3) {
+    transform: translateY(-2px) rotate(-8deg);
+}
+.wobbly-text span:nth-child(4) {
+    transform: translateY(3px) rotate(10deg);
+}
+
+.image-box,
+.embed-box,
+.link-box,
+.text-box {
+    /* box-shadow: horizontal-offset vertical-offset blur-radius spread-radius color; */
+    box-shadow: 0 0 0.3em 0 #666666
+}
+
+footer {
+    margin-block-start: calc(10*var(--spacing));
 }
 
 
