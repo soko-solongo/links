@@ -36,7 +36,10 @@ let renderBlock = (blockData) => {
             <li class="link-block">
                 <div class="link-box">
                     <h3><a href="${ blockData.source.url }">${blockData.title}</a></h3>
-                    ${ blockData.description.html }
+                    ${ blockData.description // Here, checks for the object; could also write `blockData.description?.html`.
+							? `<div>${blockData.description.html}</div>` // Wrap/interpolate the HTML.
+							: `` // Our “otherwise” can also be blank!
+					}
                 </div>
             </li>
 			`
@@ -58,7 +61,10 @@ let renderBlock = (blockData) => {
                     <img src="${blockData.image.medium.src_2x}" alt="image of clutter">
                 </div>
                 <h3>${blockData.title}</h3>
-                <p>${blockData.description}</p>
+                ${ blockData.description // Here, checks for the object; could also write `blockData.description?.html`.
+                    ? `<div>${blockData.description.html}</div>` // Wrap/interpolate the HTML.
+                    : `` // Our “otherwise” can also be blank!
+				}
             </div>
         </li>
         `
