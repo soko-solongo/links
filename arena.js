@@ -45,6 +45,11 @@ let renderBlock = (blockData) => {
 				</figure>
 				<p><a href="${ blockData.source.url }">See the original ↗</a></p>
 			</li>
+
+            <div class="link-box">
+                    <h3><a href="https://geokash.com/">geokash.com</a></h3>
+            </div>
+
 			`
 
 		// And puts it into the page!
