@@ -1,5 +1,5 @@
 let channelSlug = 'clutter-is-design' // The “slug” is just the end of the URL. It's channel title
-// let myUsername = 'eric-li' // For linking to your profile.
+let myUsername = 'soko-mungunsukh' // For linking to your profile.
 
 
 
@@ -18,42 +18,31 @@ let placeChannelInfo = (channelData) => {
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
-
-
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
+    let imageBlocks = document.querySelector('#image-blocks')
+    let textBlocks = document.querySelector('#text-blocks')
+    let linkBlocks = document.querySelector('#link-blocks')
+    let embedBlocks = document.querySelector('#embed-blocks')
+    let attachmentBlocks = document.querySelector('#attachment-blocks')
 
 	// Links!
 	if (blockData.type == 'Link') {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
 			`
-			<li>
-				<p><em>Link</em></p>
-				<figure>
-					<picture>
-						<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
-						<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
-						<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
-					</picture>
-					<figcaption>
-						<h3>${ blockData.title }</h3>
-						${ blockData.description.html }
-					</figcaption>
-				</figure>
-				<p><a href="${ blockData.source.url }">See the original ↗</a></p>
-			</li>
-
-            <div class="link-box">
-                    <h3><a href="https://geokash.com/">geokash.com</a></h3>
-            </div>
-
+            <li class="link-block">
+                <div class="link-box">
+                    <h3><a href="${ blockData.source.url }">${blockData.title}</a></h3>
+                    ${ blockData.description.html }
+                </div>
+            </li>
 			`
-
+        // Always good to check your HTML string before you insert it.
 		// And puts it into the page!
-		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		linkBlocks.insertAdjacentHTML('beforeend', linkItem)
 
 		// More on template literals:
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
@@ -61,18 +50,38 @@ let renderBlock = (blockData) => {
 
 	// Images!
 	else if (blockData.type == 'Image') {
-		// …up to you!
+        let imageItem =
+        `
+        <li class="image-block">
+            <div class="image-box">
+                <div class="image-controller">
+                    <img src="${blockData.image.medium.src_2x}" alt="image of clutter">
+                </div>
+                <h3>${blockData.title}</h3>
+                <p>${blockData.description}</p>
+            </div>
+        </li>
+        `
+        console.log(imageItem)
 
-		// IDEALLY DUMP YOUR HTML LINES HERE, BUT CHANGE THE IMG SRC AS LOCAL PATH TO "BLOCKDATA BLA BLA"
-		// let imageBlock = 
-		// <figure>
-		// 	<img src="${ blockData.image.large.src_2x }"></img>
-		// </figure>
+        imageBlocks.insertAdjacentHTML('beforeend', imageItem)
+
 	}
 
 	// Text!
 	else if (blockData.type == 'Text') {
-		// …up to you!
+		let textItem =
+			`
+            <li class="text-block">
+                <div class="text-box">
+                    <p>${blockData.content.html}</p>
+                </div>
+            </li>
+			`
+        // Always good to check your HTML string before you insert it.
+		// And puts it into the page!
+		textBlocks.insertAdjacentHTML('beforeend', textItem)
+        console.log(textItem)
 	}
 
 	// Uploaded (not linked) media…
@@ -131,10 +140,20 @@ let renderBlock = (blockData) => {
 				<li>
 					<p><em>Linked Video</em></p>
 					${ blockData.embed.html }
+
+                    <div class="embed-box">
+                        <div class="embed-controller">
+                            <img src="images/embed1.png" alt="preview of embed visual">
+                        </div>
+                        <div>
+                            <h3>${blockData.title}</h3>
+                            <p>by ${blockData.source.name}</p>
+                        </div>
+                    </div>
 				</li>
 				`
 
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			embedBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 
 			// More on `iframe`:
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
@@ -181,7 +200,7 @@ let fetchJson = (url, callback) => {
 
 // Now that we have said all the things we *can* do, go get the channel data:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
-	console.log(json) // Always good to check your response!
+	// console.log(json) // Always good to check your response!
 
 	placeChannelInfo(json) // Pass all the data to the first function, above.
 	renderUser(json.owner) // Pass just the nested object `.owner`.
