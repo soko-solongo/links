@@ -32,10 +32,10 @@ body {
 
 h1 {
     font-family: var(--head-font);
-    font-size: calc(4*var(--spacing));
+    font-size: calc(3.6*var(--spacing));
     color: var(--pink);
     text-transform: uppercase;
-    line-height: calc(5*var(--spacing));
+    line-height: calc(3*var(--spacing));
 }
 
 h2 {
