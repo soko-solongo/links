@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Paytone+One&display=swap');
 
 :root{
     --spacing: 1.5rem;
     --head-font: "Paytone One", sans-serif;
-    --body-font: "Nunito", sans-serif;
+    --body-font: "Mona Sans", sans-serif;
 
     --black: #2b2b2b;
-    --background: #b43c48;
-    --white: #f1f1f1;
-    --grey: #e0e0e0;
+    --background: #FBF0E5;
+    --white: #ffffff;
+
     --pink: #E79FFF;
     --yellow: #ffd06b;
     --blue: #50eeff;
