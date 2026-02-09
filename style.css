@@ -7,16 +7,28 @@
 
     --black: #2b2b2b;
     --background: #FBF0E5;
-    --white: #ffffff;
-
-    --pink: #E79FFF;
-    --yellow: #ffd06b;
-    --blue: #50eeff;
-    --green: #6feb6f;
-    --purple: #bfacff;
 }
 
 html{scroll-behavior: smooth;}
+
+/* ------ color ids ------ */
+#saffron { color: #ff4c28; }
+#blue { color: #1472FF; }
+
+#green { color: #37d6a4; }
+#pink { color: #ec8fff; }
+
+#yellow { color: #ffd335; }
+#peach { color: #ff8fa7; }
+
+#blue { color: #36a8ff; }
+#lime { color: #cbed74; }
+
+#purple { color: #b379ff; }
+#orange { color: #ed9474; }
+
+#red { color: #ff6c6c; }
+#turquose { color: #5cecdd; }
 
 body {
     font-family: var(--body-font);
@@ -25,69 +37,28 @@ body {
     color: var(--black);
     background: var(--background);
     line-height: calc(1.1*var(--spacing));
-    padding: calc(0.5*var(--spacing));
-    text-align: center;
-    margin-inline: auto;
+    text-align: left;
+    padding-inline: 2%;
 }
 
-h1 {
+h1,
+h2 {
     font-family: var(--head-font);
-    font-size: calc(3.6*var(--spacing));
     color: var(--pink);
     text-transform: uppercase;
     line-height: calc(3*var(--spacing));
 }
 
+h1 {
+    font-size: calc(2.8*var(--spacing));
+}
+
 h2 {
-    font-family: var(--head-font);
-    font-size: calc(1.4*var(--spacing));
-    line-height: calc(1.7*var(--spacing));
-    padding-block: calc(0.8*var(--spacing));
-    display: inline-block;
-/* !!! put each side on different container so that it looks equal */
-}
-
-.h2-line {
-    display: flex;
-    flex-direction: column;
-    gap: calc(6*var(--spacing));
-}
-
-h3 {
-    font-size: calc(0.7*var(--spacing));
-    font-weight: 600;
-    line-height: calc(1*var(--spacing));
-}
-
-#white {
-    color: var(--white);
-    font-size: calc(0.8*var(--spacing));
-    line-height: calc(1.2*var(--spacing));
-}
-
-#green {
-    color: var(--green);
-}
-
-#blue {
-    color: var(--blue);
-}
-
-#pink {
-    color: var(--pink);
-}
-
-#yellow {
-    color: var(--yellow);
-}
-
-#purple {
-    color: var(--purple);
+    font-size: calc(2.2*var(--spacing));
 }
 
 /* bunch of white containers */
-.grid {
-    text-align: left;
+.box {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
