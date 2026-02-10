@@ -63,10 +63,15 @@ h2 {
     font-size: calc(2*var(--spacing));
 }
 
+p {
+    max-inline-size: 50ch;
+}
+
 .box {
     /* background: #1472FF; */
     inline-size: 100%;
     min-block-size: 80vh;
+    margin-block: calc(1.2*var(--spacing));
 }
 
 ul {
@@ -142,39 +147,17 @@ strong {
     text-align: center;
 }
 
-.title {
+.heading-div {
     display: flex;
     flex-direction: column;
     gap: var(--spacing);
-    padding-block: calc(1*var(--spacing));
+    padding-block: 8%;
 }
 
-.h2-div {
+.title {
     display: flex;
     flex-direction: column;
 }
-
-/* white container */
-/* .embed-box {
-    background: var(--grey);
-    padding: calc(0.3*var(--spacing));
-    padding-inline-end: calc(0.8*var(--spacing));
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    gap: calc(0.3*var(--spacing));
-    block-size: inline-block;
-    position: relative;
-} */
-
-/* play symbol */
-/* .embed-box::before {
-    content: "▶︎";
-    font-size: var(--spacing);
-    position: absolute;
-    top: 0.6em;
-    right: 6.1em;
-} */
 
 a {
     text-decoration: underline;
@@ -195,6 +178,65 @@ footer {
     gap: calc(0.5*var(--spacing));
     padding-block: var(--spacing);
 }
+
+@media (width>500px) {
+    :root {
+        font-size: 110%;
+    }
+
+    h1 {
+        font-size: calc(3.4*var(--spacing));
+    }
+
+    h2 {
+        font-size: calc(2.5*var(--spacing));
+    }
+    
+}
+
+@media (width>750px) {
+    :root {
+        font-size: 120%;
+    }
+
+    h1 {
+        font-size: calc(4*var(--spacing));
+    }
+
+    h2 {
+        font-size: calc(3.5*var(--spacing));
+    }
+
+    .heading-div {
+        gap: calc(2*var(--spacing));
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (width>1000px) {
+    :root {
+        font-size: 130%;
+    }
+
+    h1 {
+        font-size: calc(5*var(--spacing));
+    }
+
+    .heading-div {
+        gap: calc(3*var(--spacing));
+    }
+
+    .title {
+        flex-direction: row;
+    }
+}
+
+/* ------ THE THINGS ARE FINE~ISH UNTIL 1000PX BREAKPOINT. 
+TRY ALIGN-SELF: FLEX-END ON 3RD WORD IN TITLES */
 
 /* 
 .clutter-1,
