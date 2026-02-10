@@ -12,23 +12,23 @@
 html{scroll-behavior: smooth;}
 
 /* ------ color ids ------ */
-#saffron { color: #ff4c28; }
+#saffron { color: #ff431d; }
 #blue { color: #1472FF; }
 
 #green { color: #37d6a4; }
-#pink { color: #ec8fff; }
+#pink { background: #d497e0; }
 
-#yellow { color: #ffd335; }
-#peach { color: #ff8fa7; }
+#yellow { color: #ffc117; }
+#peach { background: #ff8fa7; }
 
 #blue { color: #36a8ff; }
-#lime { color: #cbed74; }
+#lime { background: #d6f094; }
 
 #purple { color: #b379ff; }
-#orange { color: #ed9474; }
+#orange { background: #ffb296; }
 
 #red { color: #ff6c6c; }
-#turquose { color: #5cecdd; }
+#turquose { background: #5cecdd; }
 
 body {
     font-family: var(--body-font);
@@ -66,7 +66,7 @@ h2 {
 
 
 .box {
-    background: #1472FF;
+    /* background: #1472FF; */
     inline-size: 100%;
 }
 
@@ -121,15 +121,20 @@ strong {
 }
 
 .left-align {
-    justify-self: left;
+    text-align: left;
 }
 
 .right-align {
-    justify-self: right;
+    text-align: right;
 }
 
 .center-align {
-    justify-self: center;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
 }
 
 /* white container */
