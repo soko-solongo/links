@@ -2,7 +2,6 @@ let channelSlug = 'clutter-is-design' // The “slug” is just the end of the U
 let myUsername = 'soko-mungunsukh' // For linking to your profile.
 
 
-
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (channelData) => {
 	// Target some elements in your HTML:
@@ -28,14 +27,14 @@ let renderBlock = (blockData) => {
     let embedBlocks = document.querySelector('#embed-blocks')
     let attachmentBlocks = document.querySelector('#attachment-blocks')
 
-	// Links!
+	// NEED TO REVISIT Links!
 	if (blockData.type == 'Link') {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
 			`
-            <li class="link-block">
-                <div class="link-box">
-                    <h3><a href="${ blockData.source.url }">${blockData.title}</a></h3>
+            <li>
+                <div class="link-controller">
+                    <p><a href="${ blockData.source.url }">${blockData.title}</a></p>
                     ${ blockData.description // Here, checks for the object; could also write `blockData.description?.html`.
 							? `<div>${blockData.description.html}</div>` // Wrap/interpolate the HTML.
 							: `` // Our “otherwise” can also be blank!
@@ -47,50 +46,36 @@ let renderBlock = (blockData) => {
 		// And puts it into the page!
 		linkBlocks.insertAdjacentHTML('beforeend', linkItem)
 
-		// More on template literals:
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 	}
 
 	// Images!
 	else if (blockData.type == 'Image') {
         let imageItem =
         `
-        <li class="image-block">
-            <div class="image-box">
-                <div class="image-controller">
-                    <img src="${blockData.image.medium.src_2x}" alt="image of clutter">
-                </div>
-                <h3>${blockData.title}</h3>
-                ${ blockData.description // Here, checks for the object; could also write `blockData.description?.html`.
-                    ? `<div>${blockData.description.html}</div>` // Wrap/interpolate the HTML.
-                    : `` // Our “otherwise” can also be blank!
-				}
+        <li>
+            <div class="image-controller">
+                <img src="${blockData.image.medium.src_2x}" alt="image of clutter">
             </div>
         </li>
         `
-        console.log(imageItem)
 
         imageBlocks.insertAdjacentHTML('beforeend', imageItem)
-
 	}
 
-	// Text!
+	// NEED TO REVISIT Text!
 	else if (blockData.type == 'Text') {
 		let textItem =
 			`
-            <li class="text-block">
-                <div class="text-box">
+            <li>
+                <div class="text-controller">
                     <p>${blockData.content.html}</p>
                 </div>
             </li>
 			`
-        // Always good to check your HTML string before you insert it.
-		// And puts it into the page!
 		textBlocks.insertAdjacentHTML('beforeend', textItem)
-        console.log(textItem)
 	}
 
-	// Uploaded (not linked) media…
+	// NEED TO REVISIT Uploaded (not linked) media…
 	else if (blockData.type == 'Attachment') {
 		let contentType = blockData.attachment.content_type // Save us some repetition.
 
@@ -144,25 +129,12 @@ let renderBlock = (blockData) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
-					${ blockData.embed.html }
-
-                    <div class="embed-box">
-                        <div class="embed-controller">
-                            <img src="images/embed1.png" alt="preview of embed visual">
-                        </div>
-                        <div>
-                            <h3>${blockData.title}</h3>
-                            <p>by ${blockData.source.name}</p>
-                        </div>
+                    <div class="embed-controller">
+                        ${ blockData.embed.html }
                     </div>
 				</li>
 				`
-
 			embedBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-
-			// More on `iframe`:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
 		// Linked audio!
