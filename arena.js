@@ -20,7 +20,7 @@ let placeChannelInfo = (channelData) => {
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
-	let channelBlocks = document.querySelector('#channel-blocks')
+	// let channelBlocks = document.querySelector('#channel-blocks')
     let imageBlocks = document.querySelector('#image-blocks')
     let textBlocks = document.querySelector('#text-blocks')
     let linkBlocks = document.querySelector('#link-blocks')

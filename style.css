@@ -38,7 +38,14 @@ body {
     background: var(--background);
     line-height: calc(1.1*var(--spacing));
     text-align: left;
-    padding-inline: 2%;
+    padding-inline: 3%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: calc(4*var(--spacing));
+    padding-block: calc(2*var(--spacing));
 }
 
 h1,
@@ -50,23 +57,29 @@ h2 {
 }
 
 h1 {
-    font-size: calc(2.8*var(--spacing));
+    font-size: calc(2.6*var(--spacing));
 }
 
 h2 {
     font-size: calc(2.2*var(--spacing));
 }
 
-/* bunch of white containers */
+
 .box {
+    background: #1472FF;
+    inline-size: 100%;
+}
+
+ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: calc(0.5*var(--spacing));
-    align-items: center;
     justify-content: center;
-    padding-block: calc(2*var(--spacing));
+    gap: calc(0.2*var(--spacing));
+    /* max-inline-size: calc(20*var(--spacing)); */
 }
+
+
 
 /* <---- Content size controllers -----> */
 
@@ -101,6 +114,22 @@ h2 {
     /* aspect-ratio: 1/1; */
     block-size: auto;
     overflow: hidden;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.left-align {
+    justify-self: left;
+}
+
+.right-align {
+    justify-self: right;
+}
+
+.center-align {
+    justify-self: center;
 }
 
 /* white container */
