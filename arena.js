@@ -85,20 +85,27 @@ let renderBlock = (blockData) => {
 			let videoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
-					<video controls src="${ blockData.attachment.url }"></video>
+					<div class="video-controller">
+						<video controls src="${ blockData.attachment.url }"></video>
+					</div>
 				</li>
 				`
 
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-
-			// More on `video`, like the `autoplay` attribute:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+			attachmentBlocks.insertAdjacentHTML('beforeend', videoItem)
 		}
 
 		// Uploaded PDFs!
 		else if (contentType.includes('pdf')) {
-			// …up to you!
+			let pdfItem =
+				`
+				<li>
+					<div class="pdf-controller">
+						<iframe src="${ blockData.attachment.url }"></iframe>
+					</div>
+				</li>
+				`
+
+			attachmentBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
 		// Uploaded audio!
@@ -139,7 +146,15 @@ let renderBlock = (blockData) => {
 
 		// Linked audio!
 		else if (embedType.includes('rich')) {
-			// …up to you!
+
+			let linkedAudioItem =
+			`
+				<li>
+					<div class="audio-embed-controller">
+						${blockData.embed.html}
+				</li>
+				`
+      		embedBlocks.insertAdjacentHTML("beforeend", linkedAudioItem);
 		}
 	}
 }

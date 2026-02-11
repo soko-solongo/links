@@ -246,7 +246,7 @@ footer {
     .title {
         flex-direction: row;
         gap: calc(1.5*var(--spacing));
-        align-items: last baseline;
+        align-items: flex-end;
     }
 }
 
