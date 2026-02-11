@@ -35,10 +35,6 @@ let renderBlock = (blockData) => {
             <li>
                 <div class="link-controller">
                     <p><a href="${ blockData.source.url }">${blockData.title}</a></p>
-                    ${ blockData.description // Here, checks for the object; could also write `blockData.description?.html`.
-							? `<div>${blockData.description.html}</div>` // Wrap/interpolate the HTML.
-							: `` // Our “otherwise” can also be blank!
-					}
                 </div>
             </li>
 			`
@@ -104,22 +100,21 @@ let renderBlock = (blockData) => {
 					</div>
 				</li>
 				`
-
 			attachmentBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
 		// Uploaded audio!
 		else if (contentType.includes('audio')) {
 			// …still up to you, but here’s an `audio` element:
-			let audioItem =
-				`
-				<li>
-					<p><em>Audio</em></p>
-					<audio controls src="${ blockData.attachment.url }"></video>
-				</li>
-				`
+			// let audioItem =
+			// 	`
+			// 	<li>
+			// 		<p><em>Audio</em></p>
+			// 		<audio controls src="${ blockData.attachment.url }"></video>
+			// 	</li>
+			// 	`
 
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			// channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 
 			// More on`audio`:
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio

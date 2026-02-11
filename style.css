@@ -136,6 +136,12 @@ ul {
     inline-size: inline-block;
 }
 
+.attachment-controller {
+    inline-size: calc(6.5*var(--spacing));
+    block-size: 100%
+    overflow: hidden;
+}
+
 strong {
     font-weight: 600;
 }
