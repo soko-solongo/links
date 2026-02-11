@@ -97,7 +97,7 @@ ul {
 }
 
 .text-controller {
-    background: var(--pink) 70%;
+    background: var(--pink);
     padding: calc(0.6*var(--spacing));
     padding-block-start: calc(2.8*var(--spacing));
     max-inline-size: calc(18*var(--spacing));
@@ -117,7 +117,12 @@ ul {
 
 .embed-controller {
     inline-size: calc(14*var(--spacing));
-    /* aspect-ratio: 1/1; */
+    block-size: auto;
+    overflow: hidden;
+}
+
+.audio-embed-controller {
+    inline-size: calc(14*var(--spacing));
     block-size: auto;
     overflow: hidden;
 }
