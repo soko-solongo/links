@@ -85,8 +85,6 @@ ul {
     /* max-inline-size: calc(20*var(--spacing)); */
 }
 
-
-
 /* <---- Content size controllers -----> */
 
 /* to control the size of img */
@@ -138,7 +136,7 @@ ul {
 
 .attachment-controller {
     inline-size: calc(6.5*var(--spacing));
-    block-size: 100%
+    block-size: 100%;
     overflow: hidden;
 }
 
@@ -284,13 +282,7 @@ footer {
 }
 
 
-/* ------ THE THINGS ARE FINE~ISH UNTIL 1000PX BREAKPOINT. 
-TRY ALIGN-SELF: FLEX-END ON 3RD WORD IN TITLES */
-
-/* 
-.clutter-1,
-.clutter-2,
-.clutter-3 {
+.clutter-1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -299,16 +291,12 @@ TRY ALIGN-SELF: FLEX-END ON 3RD WORD IN TITLES */
 }
 
 .main-clutter {
-    margin-block: calc(10*var(--spacing));
+    padding-block: calc(5*var(--spacing));
     margin-inline: auto;
-    inline-size: 80%;
-    min-block-size: calc(35*var(--spacing));
-    text-align: left;
+    inline-size: 100%;
+    min-block-size: 80vh;
+    overflow: hidden;
     position: relative;
-}
-
-.clutter-1 {
-    z-index: 3;
 }
 
 .clutter-1 > :nth-child(odd) {
@@ -319,6 +307,12 @@ TRY ALIGN-SELF: FLEX-END ON 3RD WORD IN TITLES */
     transform: translateY(-2em) rotate(-15deg);
 }
 
+li:hover {
+    z-index: 10;
+    transform: scale(1.5);
+}
+
+/* 
 .clutter-2 {
     z-index: 1;
 }
