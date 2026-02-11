@@ -307,10 +307,10 @@ footer {
     transform: translateY(-2em) rotate(-15deg);
 }
 
-li:hover {
+/* li:hover {
     z-index: 10;
     transform: scale(1.5);
-}
+} */
 
 /* 
 .clutter-2 {
