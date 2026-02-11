@@ -147,7 +147,14 @@ strong {
     text-align: center;
 }
 
-.heading-div {
+.h1-div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    padding-block: 8%;
+}
+
+.h2-div {
     display: flex;
     flex-direction: column;
     gap: var(--spacing);
@@ -207,7 +214,8 @@ footer {
         font-size: calc(3.5*var(--spacing));
     }
 
-    .heading-div {
+    .h1-div,
+    .h2-div {
         gap: calc(2*var(--spacing));
     }
 
@@ -223,17 +231,36 @@ footer {
     }
 
     h1 {
-        font-size: calc(5*var(--spacing));
-    }
-
-    .heading-div {
-        gap: calc(3*var(--spacing));
+        font-size: calc(4.5*var(--spacing));
     }
 
     .title {
         flex-direction: row;
     }
 }
+
+@media (width>1400px) {
+
+    .h1-div {
+        padding-block: 4%;
+        gap: calc(-1*var(--spacing));
+        padding-block-end: var(--spacing);
+
+    }
+
+    .h2-div {
+        /* padding-block: 4%;
+        gap: calc(1*var(--spacing));
+        padding-block-end: var(--spacing); */
+    }
+
+    body {
+        max-inline-size: calc(45*var(--spacing));
+        margin-inline: auto;
+    }
+
+}
+
 
 /* ------ THE THINGS ARE FINE~ISH UNTIL 1000PX BREAKPOINT. 
 TRY ALIGN-SELF: FLEX-END ON 3RD WORD IN TITLES */
