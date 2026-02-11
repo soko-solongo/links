@@ -157,13 +157,13 @@ strong {
 .h2-div {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing);
     padding-block: 8%;
 }
 
 .title {
     display: flex;
     flex-direction: column;
+    gap: calc(0.5*var(--spacing));
 }
 
 a {
@@ -223,6 +223,10 @@ footer {
         flex-direction: row;
         justify-content: space-between;
     }
+
+    ul {
+        gap: calc(0.8*var(--spacing));
+    }
 }
 
 @media (width>1000px) {
@@ -234,8 +238,15 @@ footer {
         font-size: calc(4.5*var(--spacing));
     }
 
+    .h2-div {
+        padding-block: initial;
+        gap: var(--spacing);
+    }
+
     .title {
         flex-direction: row;
+        gap: calc(1.5*var(--spacing));
+        align-items: last baseline;
     }
 }
 
