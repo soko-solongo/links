@@ -2,20 +2,22 @@ let channelSlug = 'clutter-is-design' // The “slug” is just the end of the U
 let myUsername = 'soko-mungunsukh' // For linking to your profile.
 
 
-// // First, let’s lay out some *functions*, starting with our basic metadata:
-// let placeChannelInfo = (channelData) => {
-// 	// Target some elements in your HTML:
-// 	let channelTitle = document.querySelector('#channel-title')
-// 	let channelDescription = document.querySelector('#channel-description')
-// 	let channelCount = document.querySelector('#channel-count')
-// 	let channelLink = document.querySelector('#channel-link')
+// First, let’s lay out some *functions*, starting with our basic metadata:
+let placeChannelInfo = (channelData) => {
+	// Target some elements in your HTML:
+	let channelTitle = document.querySelector('#channel-title')
+	let channelDescription = document.querySelector('#channel-description')
+	let channelCount = document.querySelector('#channel-count')
+	let channelLink = document.querySelector('#channel-link')
 
-// 	// Then set their content/attributes to our data:
-// 	channelTitle.innerHTML = channelData.title
-// 	channelDescription.innerHTML = channelData.description.html
-// 	channelCount.innerHTML = channelData.counts.blocks
-// 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
-// }
+	// Then set their content/attributes to our data:
+	channelTitle.innerHTML = channelData.title
+	channelDescription.innerHTML = channelData.description.html
+	channelCount.innerHTML = channelData.counts.blocks
+	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+}
+
+
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
@@ -157,7 +159,6 @@ let renderBlock = (blockData) => {
 
 
 
-
 // A function to display the owner/collaborator info:
 let renderUser = (userData) => {
 	let channelUsers = document.querySelector('#channel-users') // Container.
@@ -182,6 +183,8 @@ let fetchJson = (url, callback) => {
 		.then((response) => response.json())
 		.then((json) => callback(json))
 }
+
+
 
 // Now that we have said all the things we *can* do, go get the channel data:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
@@ -216,6 +219,10 @@ let rotateBlocks = document.querySelectorAll('li') // Gets all of them.
 
 // Loop through the list, doing this `forEach` one.
 rotateBlocks.forEach((block) => {
+	// ATTRIBUTION: the following code is generating random numbers and learned from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+	let randomRotation = Math.floor(Math.random() * 21) - 10; // Random rotation between -10 and +10 degrees (including -10, 0, and +10).
+	block.style.setProperty('--rotation', `${randomRotation}deg`)
+
 	let sectionObserver = new IntersectionObserver(([entry])=> {
 		// When it is intersecting, apply the class; otherwise, remove it.
 		if (entry.isIntersecting) {

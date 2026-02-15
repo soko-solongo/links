@@ -84,10 +84,11 @@ ul {
     /* max-inline-size: calc(20*var(--spacing)); */
 }
 
+/* li is representing each block of arena */
 li {
     transition: all 1s ease-in-out;
     will-change: transform;
-    transform: rotate(5deg);
+    transform: rotate(var(--rotation));
 }
 
 li.rotate {
