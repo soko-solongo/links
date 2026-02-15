@@ -50,7 +50,6 @@ header {
 h1,
 h2 {
     font-family: var(--head-font);
-    color: var(--pink);
     text-transform: uppercase;
     line-height: calc(3*var(--spacing));
 }
@@ -85,6 +84,15 @@ ul {
     /* max-inline-size: calc(20*var(--spacing)); */
 }
 
+li {
+    transition: all 1s ease-in-out;
+    will-change: transform;
+}
+
+li.highlight {
+    transform: rotate(5deg);
+}
+
 /* <---- Content size controllers -----> */
 
 /* to control the size of img */
@@ -95,7 +103,7 @@ ul {
 }
 
 .text-controller {
-    background: var(--pink);
+    /* background: var(--pink); */
     padding: calc(0.6*var(--spacing));
     padding-block-start: calc(2.8*var(--spacing));
     max-inline-size: calc(18*var(--spacing));

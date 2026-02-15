@@ -2,20 +2,20 @@ let channelSlug = 'clutter-is-design' // The “slug” is just the end of the U
 let myUsername = 'soko-mungunsukh' // For linking to your profile.
 
 
-// First, let’s lay out some *functions*, starting with our basic metadata:
-let placeChannelInfo = (channelData) => {
-	// Target some elements in your HTML:
-	let channelTitle = document.querySelector('#channel-title')
-	let channelDescription = document.querySelector('#channel-description')
-	let channelCount = document.querySelector('#channel-count')
-	let channelLink = document.querySelector('#channel-link')
+// // First, let’s lay out some *functions*, starting with our basic metadata:
+// let placeChannelInfo = (channelData) => {
+// 	// Target some elements in your HTML:
+// 	let channelTitle = document.querySelector('#channel-title')
+// 	let channelDescription = document.querySelector('#channel-description')
+// 	let channelCount = document.querySelector('#channel-count')
+// 	let channelLink = document.querySelector('#channel-link')
 
-	// Then set their content/attributes to our data:
-	channelTitle.innerHTML = channelData.title
-	channelDescription.innerHTML = channelData.description.html
-	channelCount.innerHTML = channelData.counts.blocks
-	channelLink.href = `https://www.are.na/channel/${channelSlug}`
-}
+// 	// Then set their content/attributes to our data:
+// 	channelTitle.innerHTML = channelData.title
+// 	channelDescription.innerHTML = channelData.description.html
+// 	channelCount.innerHTML = channelData.counts.blocks
+// 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+// }
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
@@ -147,12 +147,14 @@ let renderBlock = (blockData) => {
 				<li>
 					<div class="audio-embed-controller">
 						${blockData.embed.html}
+					</div>
 				</li>
 				`
       		embedBlocks.insertAdjacentHTML("beforeend", linkedAudioItem);
+			}
 		}
 	}
-}
+
 
 
 
@@ -211,4 +213,26 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 	})
+
+	
+// ATTRIBUTION: the following code structure is from T&I 2526 course curriculum: https://typography-interaction-2526.github.io/topic/javascript/#watching-for-scrolling
+let highlightClass = 'highlight' // Set up variables again.
+let highlightBlocks = document.querySelectorAll('li') // Gets all of them.
+
+// Loop through the list, doing this `forEach` one.
+highlightBlocks.forEach((block) => {
+	let sectionObserver = new IntersectionObserver(([entry])=> {
+		// When it is intersecting, apply the class; otherwise, remove it.
+		if (entry.isIntersecting) {
+			block.classList.add(highlightClass)
+		} else {
+			block.classList.remove(highlightClass)
+		}
+	}, {
+		rootMargin: '-25% 0% -25% 0%', // CSS-ish: top/right/bottom/left.
+	})
+
+	sectionObserver.observe(block) // Watch each one!
+})
+
 })
