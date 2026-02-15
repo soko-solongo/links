@@ -87,10 +87,11 @@ ul {
 li {
     transition: all 1s ease-in-out;
     will-change: transform;
+    transform: rotate(5deg);
 }
 
 li.rotate {
-    transform: rotate(5deg);
+    transform: initial;
 }
 
 /* <---- Content size controllers -----> */
