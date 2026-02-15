@@ -183,11 +183,6 @@ let fetchJson = (url, callback) => {
 		.then((json) => callback(json))
 }
 
-// More on `fetch`:
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch
-
-
-
 // Now that we have said all the things we *can* do, go get the channel data:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
 	// console.log(json) // Always good to check your response!
@@ -214,19 +209,19 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 	})
 
-	
+
 // ATTRIBUTION: the following code structure is from T&I 2526 course curriculum: https://typography-interaction-2526.github.io/topic/javascript/#watching-for-scrolling
-let highlightClass = 'highlight' // Set up variables again.
-let highlightBlocks = document.querySelectorAll('li') // Gets all of them.
+let rotateClass = 'rotate' // Set up variables again.
+let rotateBlocks = document.querySelectorAll('li') // Gets all of them.
 
 // Loop through the list, doing this `forEach` one.
-highlightBlocks.forEach((block) => {
+rotateBlocks.forEach((block) => {
 	let sectionObserver = new IntersectionObserver(([entry])=> {
 		// When it is intersecting, apply the class; otherwise, remove it.
 		if (entry.isIntersecting) {
-			block.classList.add(highlightClass)
+			block.classList.add(rotateClass)
 		} else {
-			block.classList.remove(highlightClass)
+			block.classList.remove(rotateClass)
 		}
 	}, {
 		rootMargin: '-25% 0% -25% 0%', // CSS-ish: top/right/bottom/left.

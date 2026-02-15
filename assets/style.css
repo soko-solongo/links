@@ -89,7 +89,7 @@ li {
     will-change: transform;
 }
 
-li.highlight {
+li.rotate {
     transform: rotate(5deg);
 }
 
