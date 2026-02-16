@@ -37,16 +37,8 @@ body {
     color: var(--black);
     background: var(--background);
     line-height: calc(1.1*var(--spacing));
-    text-align: left;
     padding-inline: 3%;
     text-align: center;
-    margin-inline: auto;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    gap: calc(1.2*var(--spacing));
 }
 
 h1,
@@ -178,15 +170,15 @@ strong {
     display: flex;
     flex-direction: column;
     gap: calc(2*var(--spacing));
-    padding-block: 20%;
+    padding-block: calc(4*var(--spacing));
 }
 
 .h2-div {
     display: flex;
     flex-direction: column;
-    padding-block: 12%;
+    padding-block: calc(2*var(--spacing));
     text-align: center;
-    /* gap: calc(1*var(--spacing)); */
+    margin-block-start: calc(6*var(--spacing));
 }
 
 .h1-div ul,
@@ -209,8 +201,12 @@ a {
 a:hover {
     opacity: 70%;
 }
+
+header,
 section {
-    padding-block-start: calc(6*var(--spacing));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
