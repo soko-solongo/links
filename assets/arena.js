@@ -220,7 +220,8 @@ let rotateBlocks = document.querySelectorAll('li') // Gets all of them.
 // Loop through the list, doing this `forEach` one.
 rotateBlocks.forEach((block) => {
 	// ATTRIBUTION: the following code is generating random numbers and learned from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-	let randomRotation = Math.floor(Math.random() * 21) - 10; // Random rotation between -10 and +10 degrees (including -10, 0, and +10).
+	//                   Math.floor(Math.random() * (max - min + 1)) + min
+	let randomRotation = Math.floor(Math.random() * (20 - (-20) + 1)) + (-20); // Random rotation between -20 and +20 degrees (including -20, 0, and +20).
 	block.style.setProperty('--rotation', `${randomRotation}deg`)
 
 	let sectionObserver = new IntersectionObserver(([entry])=> {
