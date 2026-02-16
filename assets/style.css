@@ -45,6 +45,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: calc(1.2*var(--spacing));
+    align-items: center;
 }
 
 h1,
@@ -55,7 +56,7 @@ h2 {
 }
 
 h1 {
-    font-size: calc(2.6*var(--spacing));
+    font-size: calc(3*var(--spacing));
 }
 
 h2 {
@@ -67,10 +68,10 @@ p {
 }
 
 .box {
-    /* background: #1472FF; */
     inline-size: 100%;
     min-block-size: 80vh;
-    margin-block: calc(1.2*var(--spacing));
+    /* margin-block: calc(1.2*var(--spacing)); */
+    padding-block: calc(2*var(--spacing));
 }
 
 ul {
@@ -79,8 +80,9 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: calc(0.2*var(--spacing));
-    padding-block: calc(1.5*var(--spacing));
+    gap: calc(0.4*var(--spacing));
+    overflow: hidden;
+    /* padding-block: calc(1.5*var(--spacing)); */
     /* max-inline-size: calc(20*var(--spacing)); */
 }
 
@@ -99,9 +101,16 @@ li.rotate {
 
 /* to control the size of img */
 .image-controller {
-    inline-size: calc(6.5*var(--spacing));
-    block-size: 100%;
+    block-size: calc(6.5*var(--spacing));
+    aspect-ratio: 1/1;
     overflow: hidden;
+}
+
+.image-controller img {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .text-controller {
@@ -169,8 +178,8 @@ strong {
 .h1-div {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing);
-    padding-block: 8%;
+    gap: calc(1.5*var(--spacing));
+    padding-block: 20%;
 }
 
 .h2-div {
@@ -266,7 +275,7 @@ footer {
     transform: scale(1.1);
 } */
 
-
+/* 
 @media (width>500px) {
     :root {
         font-size: 110%;
@@ -340,16 +349,10 @@ footer {
 
     }
 
-    .h2-div {
-        /* padding-block: 4%;
-        gap: calc(1*var(--spacing));
-        padding-block-end: var(--spacing); */
-    }
-
     body {
         max-inline-size: calc(45*var(--spacing));
         margin-inline: auto;
     }
 
-}
+} */
 
