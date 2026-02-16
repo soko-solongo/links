@@ -39,13 +39,14 @@ body {
     line-height: calc(1.1*var(--spacing));
     text-align: left;
     padding-inline: 3%;
+    text-align: center;
+    margin-inline: auto;
 }
 
 header {
     display: flex;
     flex-direction: column;
     gap: calc(1.2*var(--spacing));
-    align-items: center;
 }
 
 h1,
@@ -56,11 +57,11 @@ h2 {
 }
 
 h1 {
-    font-size: calc(3*var(--spacing));
+    font-size: calc(3.5*var(--spacing));
 }
 
 h2 {
-    font-size: calc(2*var(--spacing));
+    font-size: calc(1.9*var(--spacing));
 }
 
 p {
@@ -70,7 +71,7 @@ p {
 .box {
     inline-size: 100%;
     min-block-size: 80vh;
-    /* margin-block: calc(1.2*var(--spacing)); */
+    margin-block: calc(1.2*var(--spacing));
     padding-block: calc(2*var(--spacing));
 }
 
@@ -80,7 +81,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: calc(0.4*var(--spacing));
+    gap: calc(0.5*var(--spacing));
     overflow: hidden;
     /* padding-block: calc(1.5*var(--spacing)); */
     /* max-inline-size: calc(20*var(--spacing)); */
@@ -178,14 +179,21 @@ strong {
 .h1-div {
     display: flex;
     flex-direction: column;
-    gap: calc(1.5*var(--spacing));
+    gap: calc(2*var(--spacing));
     padding-block: 20%;
 }
 
 .h2-div {
     display: flex;
     flex-direction: column;
-    padding-block: 8%;
+    padding-block: 12%;
+    text-align: center;
+}
+
+.h1-div ul,
+.h2-div ul {
+    gap: calc(0.1*var(--spacing));
+    overflow: initial;
 }
 
 .title {
