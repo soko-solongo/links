@@ -67,14 +67,17 @@ p {
     padding-block: calc(2*var(--spacing));
 }
 
+
 ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-inline-size: calc(40*var(--spacing));
     justify-content: center;
     align-items: center;
     gap: calc(0.5*var(--spacing));
     overflow: hidden;
+    margin-inline: auto;
 }
 
 /* li is representing each block of arena */
