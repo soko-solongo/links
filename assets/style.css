@@ -203,7 +203,8 @@ a:hover {
 }
 
 header,
-section {
+section,
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,8 +212,6 @@ section {
 
 footer {
     margin-block-start: calc(10*var(--spacing));
-    display: flex;
-    flex-direction: column;
     gap: calc(0.5*var(--spacing));
     padding-block: var(--spacing);
 }
@@ -278,84 +277,34 @@ footer {
     transform: scale(1.1);
 } */
 
-/* 
-@media (width>500px) {
-    :root {
-        font-size: 110%;
-    }
-
-    h1 {
-        font-size: calc(3.4*var(--spacing));
-    }
-
-    h2 {
-        font-size: calc(2.5*var(--spacing));
-    }
-    
-}
-
-@media (width>750px) {
+@media (width > 900px) {
     :root {
         font-size: 120%;
     }
 
-    h1 {
-        font-size: calc(4*var(--spacing));
-    }
-
-    h2 {
-        font-size: calc(3.5*var(--spacing));
-    }
-
     .h1-div,
+    .h2-div,
+    footer {
+        flex-direction: row;
+    }
+
+    .h1-div {
+        gap: calc(2.5*var(--spacing));
+    }
+
     .h2-div {
-        gap: calc(2*var(--spacing));
+        gap: calc(1.5*var(--spacing));
     }
 
     footer {
-        flex-direction: row;
         justify-content: space-between;
     }
-
-    ul {
-        gap: calc(0.8*var(--spacing));
-    }
 }
 
-@media (width>1000px) {
-    :root {
-        font-size: 130%;
-    }
-
-    h1 {
-        font-size: calc(4.5*var(--spacing));
-    }
-
+@media (width > 1400px) {
+    .h1-div,
     .h2-div {
-        padding-block: initial;
-        gap: var(--spacing);
-    }
-
-    .title {
-        flex-direction: row;
-        gap: calc(1.5*var(--spacing));
-        align-items: flex-end;
+        transform: scale(1.5);
     }
 }
-
-@media (width>1400px) {
-
-    .h1-div {
-        padding-block: 4%;
-        gap: calc(-1*var(--spacing));
-        padding-block-end: var(--spacing);
-
-    }
-
-    body {
-        max-inline-size: calc(45*var(--spacing));
-        margin-inline: auto;
-    }
-
-} */
 
