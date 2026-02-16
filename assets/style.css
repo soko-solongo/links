@@ -61,7 +61,7 @@ h1 {
 }
 
 h2 {
-    font-size: calc(1.9*var(--spacing));
+    font-size: calc(2.5*var(--spacing));
 }
 
 p {
@@ -83,8 +83,6 @@ ul {
     align-items: center;
     gap: calc(0.5*var(--spacing));
     overflow: hidden;
-    /* padding-block: calc(1.5*var(--spacing)); */
-    /* max-inline-size: calc(20*var(--spacing)); */
 }
 
 /* li is representing each block of arena */
@@ -188,6 +186,7 @@ strong {
     flex-direction: column;
     padding-block: 12%;
     text-align: center;
+    /* gap: calc(1*var(--spacing)); */
 }
 
 .h1-div ul,
