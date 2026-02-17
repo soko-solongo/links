@@ -84,6 +84,7 @@ ul {
     overflow: hidden;
     margin-inline: auto;
     padding-block: calc(1*var(--spacing));
+    padding-inline: calc(1*var(--spacing));
 }
 
 /* li is representing each block of arena */
@@ -143,12 +144,14 @@ li.rotate {
     inline-size: calc(14*var(--spacing));
     block-size: auto;
     overflow: hidden;
+    /* border: 1.5em solid var(--background); */
 }
 
 .audio-embed-controller {
     inline-size: calc(14*var(--spacing));
     block-size: auto;
     overflow: hidden;
+    /* border: 1.5em solid var(--background); */
 }
 
 .link-controller {
@@ -201,6 +204,7 @@ strong {
 .h1-div ul,
 .h2-div ul {
     gap: calc(0.1*var(--spacing));
+    padding-inline: initial;
     overflow: initial;
 }
 
@@ -268,7 +272,16 @@ footer {
 @media (width > 1400px) {
     .h1-div,
     .h2-div {
+        gap: calc(7*var(--spacing));
+    }
+
+    h1,
+    h2 {
         transform: scale(1.5);
+    }
+
+    .box {
+        padding: calc(2.5*var(--spacing));
     }
 }
 
