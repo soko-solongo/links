@@ -239,7 +239,7 @@ rotateBlocks.forEach((block) => {
 			block.classList.remove(rotateClass)
 		}
 	}, {
-		rootMargin: '-25% 0% -25% 0%', // CSS-ish: top/right/bottom/left.
+		rootMargin: '-10% 0% -25% 0%', // CSS-ish: top/right/bottom/left.
 	})
 
 	sectionObserver.observe(block) // Watch each one!
