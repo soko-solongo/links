@@ -39,6 +39,7 @@ body {
     line-height: calc(1.1*var(--spacing));
     padding-inline: 3%;
     text-align: center;
+    justify-items: center;
 }
 
 h1,
@@ -61,18 +62,22 @@ p {
 }
 
 .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     inline-size: 100%;
-    min-block-size: 80vh;
-    margin-block: calc(1.2*var(--spacing));
-    padding-block: calc(2*var(--spacing));
-}
 
+    min-block-size: 60vh;
+    padding-block: calc(2*var(--spacing));
+    margin-block: calc(1.2*var(--spacing));
+}
 
 ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-inline-size: calc(40*var(--spacing));
+    /* max-inline-size: calc(50*var(--spacing)); */
     justify-content: center;
     align-items: center;
     gap: calc(0.5*var(--spacing));
@@ -219,65 +224,9 @@ footer {
     padding-block: var(--spacing);
 }
 
-.clutter-1 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    position: absolute;
-}
-
-.main-clutter {
-    padding-block: calc(5*var(--spacing));
-    margin-inline: auto;
-    inline-size: 100%;
-    min-block-size: 80vh;
-    overflow: hidden;
-    position: relative;
-}
-
-.clutter-1 > :nth-child(odd) {
-    transform: translateY(-5em) rotate(15deg);
-}
-
-.clutter-1 > :nth-child(even) {
-    transform: translateY(-2em) rotate(-15deg);
-}
-
 /* li:hover {
     z-index: 10;
     transform: scale(1.5);
-} */
-
-/* 
-.clutter-2 {
-    z-index: 1;
-}
-
-.clutter-2 > :nth-child(odd) {
-    transform: translateY(10em) rotate(15deg);
-}
-
-.clutter-2 > :nth-child(even) {
-    transform: translateY(-8em) rotate(-35deg);
-}
-
-.clutter-3 {
-    z-index: 2;
-    gap: calc(5*var(--spacing));
-}
-
-.clutter-3 > :nth-child(odd) {
-    transform: translateY(6em) rotate(15deg);
-}
-
-.clutter-3 > :nth-child(even) {
-    transform: translateY(1em) rotate(-5deg);
-} */
-
-/* !!! need to add hover effect on white box that zooms in
-    .clutter-1:nth-child():hover {
-    transform: scale(1.1);
 } */
 
 @media (width > 900px) {
@@ -300,6 +249,7 @@ footer {
     }
 
     footer {
+        inline-size: 100%;
         justify-content: space-between;
     }
 }

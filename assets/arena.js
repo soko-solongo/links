@@ -22,7 +22,7 @@ let placeChannelInfo = (channelData) => {
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
-	// let channelBlocks = document.querySelector('#channel-blocks')
+	let channelBlocks = document.querySelector('#channel-blocks')
     let imageBlocks = document.querySelector('#image-blocks')
     let textBlocks = document.querySelector('#text-blocks')
     let linkBlocks = document.querySelector('#link-blocks')
@@ -43,7 +43,7 @@ let renderBlock = (blockData) => {
         // Always good to check your HTML string before you insert it.
 		// And puts it into the page!
 		linkBlocks.insertAdjacentHTML('beforeend', linkItem)
-
+		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
@@ -58,6 +58,8 @@ let renderBlock = (blockData) => {
         `
 
         imageBlocks.insertAdjacentHTML('beforeend', imageItem)
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+
 	}
 
 	// NEED TO REVISIT Text!
@@ -71,6 +73,7 @@ let renderBlock = (blockData) => {
             </li>
 			`
 		textBlocks.insertAdjacentHTML('beforeend', textItem)
+		// channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
 	// NEED TO REVISIT Uploaded (not linked) media…
@@ -90,6 +93,7 @@ let renderBlock = (blockData) => {
 				`
 
 			attachmentBlocks.insertAdjacentHTML('beforeend', videoItem)
+			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 		}
 
 		// Uploaded PDFs!
@@ -103,6 +107,7 @@ let renderBlock = (blockData) => {
 				</li>
 				`
 			attachmentBlocks.insertAdjacentHTML('beforeend', pdfItem)
+			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
 		// Uploaded audio!
@@ -139,6 +144,7 @@ let renderBlock = (blockData) => {
 				</li>
 				`
 			embedBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 		}
 
 		// Linked audio!
@@ -152,7 +158,8 @@ let renderBlock = (blockData) => {
 					</div>
 				</li>
 				`
-      		embedBlocks.insertAdjacentHTML("beforeend", linkedAudioItem);
+      		embedBlocks.insertAdjacentHTML("beforeend", linkedAudioItem)
+			channelBlocks.insertAdjacentHTML('beforeend', linkedAudioItem)
 			}
 		}
 	}
