@@ -98,6 +98,10 @@ li.rotate {
     transform: initial;
 }
 
+header li.rotate {
+    transform: rotate(calc(-1*var(--rotation)));
+}
+
 /* <---- Content size controllers -----> */
 
 /* to control the size of img */
@@ -238,6 +242,17 @@ footer {
     gap: calc(0.5*var(--spacing));
     padding-block: var(--spacing);
 }
+
+.clutter {
+    gap: calc(-1*var(--spacing));
+    overflow: initial;
+    transform: scale(0.75);
+}
+
+.clutter li {
+    margin: calc(-1*var(--spacing));
+}
+
 
 /* li:hover {
     z-index: 10;
