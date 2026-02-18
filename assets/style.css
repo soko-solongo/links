@@ -73,6 +73,15 @@ p {
     margin-block: calc(1.2*var(--spacing));
 }
 
+header > .box {
+    padding: 0;
+    block-size: calc(60*var(--spacing));
+}
+
+header > ul {
+    inline-size: 100%;
+}
+
 ul {
     display: flex;
     flex-direction: row;
