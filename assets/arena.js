@@ -1,19 +1,20 @@
 let channelSlug = 'clutter-is-design' // The “slug” is just the end of the URL. It's channel title
 let myUsername = 'soko-mungunsukh' // For linking to your profile.
+let ownerUsername = 'kinza-ghanchi' // For linking to the channel owner's profile.
 
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (channelData) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.querySelector('#channel-title')
-	let channelDescription = document.querySelector('#channel-description')
-	let channelCount = document.querySelector('#channel-count')
+	// let channelDescription = document.querySelector('#channel-description')
+	// let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = channelData.title
-	channelDescription.innerHTML = channelData.description.html
-	channelCount.innerHTML = channelData.counts.blocks
+	// channelDescription.innerHTML = channelData.description.html
+	// channelCount.innerHTML = channelData.counts.blocks
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
@@ -167,13 +168,13 @@ let renderBlock = (blockData) => {
 
 
 // A function to display the owner/collaborator info:
+// !!! NEED TO FIGURE OUT THIS SECTION FOR FOOTER
 let renderUser = (userData) => {
 	let channelUsers = document.querySelector('#channel-users') // Container.
 
 	let userAddress =
 		`
 		<address>
-			<img src="${ userData.avatar }">
 			<h3>${ userData.name }</h3>
 			<p><a href="https://are.na/${ userData.slug }">Are.na profile ↗</a></p>
 		</address>
@@ -201,10 +202,13 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
 	renderUser(json.owner) // Pass just the nested object `.owner`.
 })
 
-// Get your info to put with the owner's:
+// Get your info to put with mine:
 fetchJson(`https://api.are.na/v3/users/${myUsername}/`, (json) => {
-	console.log(json) // See what we get back.
+	renderUser(json) // Pass this to the same function, no nesting.
+})
 
+// Get your info to put with the owner's:
+fetchJson(`https://api.are.na/v3/users/${ownerUsername}/`, (json) => {
 	renderUser(json) // Pass this to the same function, no nesting.
 })
 
