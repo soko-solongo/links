@@ -74,8 +74,7 @@ p {
 }
 
 header > .box {
-    padding: 0;
-    block-size: calc(60*var(--spacing));
+    /* filter: grayscale(); */
 }
 
 header > ul {
@@ -255,11 +254,18 @@ footer {
 .clutter {
     gap: calc(-1*var(--spacing));
     overflow: initial;
-    transform: scale(0.75);
+    /* transform: scale(0.75); */
 }
 
 .clutter li {
     margin: calc(-1*var(--spacing));
+    filter: grayscale();
+}
+
+.clutter li:hover {
+    z-index: 10;
+    transform: scale(1.2);
+    filter: grayscale(0);
 }
 
 /* .clutter ul {
