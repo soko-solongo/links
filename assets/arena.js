@@ -37,7 +37,7 @@ let renderBlock = (blockData) => {
 			`
             <li>
                 <div class="link-controller">
-                    <p><a href="${ blockData.source.url }">${blockData.title}</a></p>
+                    <p><a href="${ blockData.source.url }">${blockData.title}&nbsp;↗</a></p>
                 </div>
             </li>
 			`
