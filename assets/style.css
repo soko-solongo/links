@@ -265,6 +265,10 @@ footer {
     filter: grayscale(0);
 }
 
+#channel-blocks li:nth-child(n+16) {
+    display: none;
+}
+
 /* .clutter ul {
     margin-block: initial;
 } */
@@ -300,6 +304,7 @@ footer {
     }
 }
 
+
 @media (width > 1400px) {
     .h1-div,
     .h2-div {
@@ -313,6 +318,10 @@ footer {
 
     .box {
         padding: calc(2.5*var(--spacing));
+    }
+
+    #channel-blocks li:nth-child(n+16) {
+    display: initial;
     }
 }
 
