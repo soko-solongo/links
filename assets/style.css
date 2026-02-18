@@ -100,10 +100,13 @@ li {
     transition: all 1s ease-in-out;
     will-change: transform;
     transform: rotate(var(--rotation));
+    /* filter: grayscale(); */
 }
 
 li.rotate {
     transform: initial;
+    /* filter: grayscale(0); */
+    
 }
 
 header li.rotate {
@@ -218,12 +221,6 @@ strong {
     gap: calc(0.1*var(--spacing));
     padding-inline: initial;
     overflow: initial;
-}
-
-.title {
-    display: flex;
-    flex-direction: column;
-    gap: calc(0.5*var(--spacing));
 }
 
 a {
