@@ -277,3 +277,28 @@ footer {
     }
 }
 
+
+/* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
+#channel-blocks {
+    
+  &.show-images {
+    li {
+      display: none;
+    }
+
+    li.image-block {
+      display: block;
+    }
+  }
+
+  &.show-text {
+    li {
+      display: none;
+    }
+
+    li.text-block {
+      display: block;
+    }
+  }
+}
+
