@@ -35,7 +35,7 @@ let renderBlock = (blockData) => {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
 			`
-            <li>
+            <li class="link-block">
                 <div class="link-controller">
                     <p><a href="${ blockData.source.url }">${blockData.title}&nbsp;↗</a></p>
                 </div>
@@ -51,7 +51,7 @@ let renderBlock = (blockData) => {
 	else if (blockData.type == 'Image') {
         let imageItem =
         `
-        <li>
+        <li class="image-block">
             <div class="image-controller">
                 <img src="${blockData.image.medium.src_2x}" alt="image of clutter">
             </div>
@@ -67,14 +67,14 @@ let renderBlock = (blockData) => {
 	else if (blockData.type == 'Text') {
 		let textItem =
 			`
-            <li>
+            <li class="text-block">
                 <div class="text-controller">
                     <p>${blockData.content.html}</p>
                 </div>
             </li>
 			`
 		textBlocks.insertAdjacentHTML('beforeend', textItem)
-		// channelBlocks.insertAdjacentHTML('beforeend', textItem)
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
 	// NEED TO REVISIT Uploaded (not linked) media…
@@ -83,25 +83,25 @@ let renderBlock = (blockData) => {
 
 		// Uploaded videos!
 		if (contentType.includes('video')) {
-			// …still up to you, but we’ll give you the `video` element:
-			let videoItem =
-				`
-				<li>
-					<div class="video-controller">
-						<video controls src="${ blockData.attachment.url }"></video>
-					</div>
-				</li>
-				`
+			// // …still up to you, but we’ll give you the `video` element:
+			// let videoItem =
+			// 	`
+			// 	<li class="attachment-block">
+			// 		<div class="video-controller">
+			// 			<video controls src="${ blockData.attachment.url }"></video>
+			// 		</div>
+			// 	</li>
+			// 	`
 
-			attachmentBlocks.insertAdjacentHTML('beforeend', videoItem)
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+			// attachmentBlocks.insertAdjacentHTML('beforeend', videoItem)
+			// channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 		}
 
 		// Uploaded PDFs!
 		else if (contentType.includes('pdf')) {
 			let pdfItem =
 				`
-				<li>
+				<li class="attachment-block">
 					<div class="pdf-controller">
 						<iframe src="${ blockData.attachment.url }"></iframe>
 					</div>
@@ -138,7 +138,7 @@ let renderBlock = (blockData) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class="embed-block">
                     <div class="embed-controller">
                         ${ blockData.embed.html }
                     </div>
@@ -153,7 +153,7 @@ let renderBlock = (blockData) => {
 
 			let linkedAudioItem =
 			`
-				<li>
+				<li class="embed-block">
 					<div class="audio-embed-controller">
 						${blockData.embed.html}
 					</div>
@@ -186,13 +186,32 @@ let renderUser = (userData) => {
 
 
 // Finally, a helper function to fetch data from the API, then run a callback function with it:
-let fetchJson = (url, callback) => {
-	fetch(url, { cache: 'no-store' })
-		.then((response) => response.json())
-		.then((json) => callback(json))
+// let fetchJson = (url, callback) => {
+// 	fetch(url, { cache: 'no-store' })
+// 		.then((response) => response.json())
+// 		.then((json) => callback(json))
+// }
+
+let fetchJson = (url, callback, pageResponses = []) => {
+  fetch(url, { cache: 'no-store' })
+    .then((response) => response.json())
+    .then((json) => {
+      // Add this page to our temporary “accumulator” list parameter (an array).
+      pageResponses.push(json)
+
+      // Are.na response includes this “there are more!” flag (a boolean):
+      if (json.meta && json.meta.has_more_pages) { // If that exists and is `true`, keep going…
+        // Fetch *another* page worth, passing along our previous/accumulated responses.
+        fetchJson(`${url}&page=${pageResponses.length + 1}`, callback, pageResponses)
+      } else { // If it is `false`, there are no more pages…
+        // “Flattens” them all together as if they were one page response.
+        json.data = pageResponses.flatMap((page) => page.data)
+
+        // Return the data to the callback!
+        callback(json)
+      }
+    })
 }
-
-
 
 // Now that we have said all the things we *can* do, go get the channel data:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {

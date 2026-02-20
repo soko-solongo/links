@@ -279,9 +279,20 @@ footer {
 
 
 /* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
-#channel-blocks {
-    
-  &.show-images {
+
+button {
+  padding: calc(0.5 * var(--spacing));
+  background: #ffb296;
+}
+
+button:hover {
+    transition: 0.3s ease-in-out;
+  background: #ff8fa7;
+}
+
+/* #channel-blocks {
+
+  &. show-images {
     li {
       display: none;
     }
@@ -300,5 +311,12 @@ footer {
       display: block;
     }
   }
-}
+} */
+
+#channel-blocks.show-images li { display: none;}
+#channel-blocks.show-images li.image-block { display: block;}
+
+#channel-blocks.show-text li { display: none;}
+#channel-blocks.show-text li.text-block { display: block;}
+
 
