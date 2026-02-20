@@ -9,7 +9,7 @@
         <script defer src="assets/script.js"></script>
 	</head>
 	<body>
-		<header>
+		<!-- <header>
             <div class="h1-div" id="saffron">
                 <h1>
                     <ul>
@@ -40,22 +40,56 @@
                     <span id="channel-title"></span> ↗
                 </a>
             </p>
-            <div class="box" id="blue">
+            <div class="box" id="blue"> -->
                 <!-- <ul class="clutter" id="channel-blocks"></ul> -->
-            </div>
-        </header>
+            <!-- </div> -->
+        <!-- </header> -->
 		<main>
             <section>
             <div id="controls">
-                <button id="show-all">Show All</button>
-                <button id="show-images">Show Images</button>
-                <button id="show-text">Show Text</button>
+                <button data-target="section-all">Show All</button>
+                <button data-target="section-images">Visuals</button>
+                <button data-target="section-texts">Notes</button>
+                <button data-target="section-links">Links</button>
             </div>
-            <ul id="channel-blocks"></ul>
-            <!-- <ul id="image-blocks"></ul> -->
-            <!-- <ul id="text-blocks"></ul> -->
+            <section id="section-all" class="content-section active">
+                <div class="h2-div" id="saffron">
+                    <h2>
+                        <ul>
+                            <li>M</li>
+                            <li>o</li>
+                            <li>r</li>
+                            <li>e</li>
+                        </ul>
+                    </h2>
+                    <h2>
+                        <ul>
+                            <li>i</li>
+                            <li>s</li>
+                        </ul>
+                    </h2>
+                    <h2>
+                        <ul>
+                            <li>M</li>
+                            <li>o</li>
+                            <li>r</li>
+                            <li>e</li>
+                        </ul>
+                    </h2>
+                </div>
+                <p>
+                    From the collection of 
+                    <a id="channel-link">
+                        <span id="channel-title"></span> ↗
+                    </a>
+                </p>
+                <div class="box" id="blue">
+                    <ul class="clutter" id="channel-blocks"></ul>
+                    <!-- <ul id="channel-blocks"></ul> -->
+                </div>
             </section>
-            <section>
+            </section>
+            <section id="section-images" class="content-section">
                 <div class="h2-div" id="green">
                     <h2>
                         <ul>
@@ -83,12 +117,12 @@
                 <p>
                     Images accumulate to prevent abstraction, insisting that things be seen rather than&nbsp;assumed.
                 </p>
-                <div class="box" id="pink">
+                <div class="box" id="blue">
                     <ul id="image-blocks"></ul>
                 </div>
             </section>
 
-            <section>
+            <section id="section-embeds" class="content-section">
                 <div class="h2-div" id="yellow">
                     <h2>
                         <ul>
@@ -115,12 +149,12 @@
                 <p>
                     Embeds persist as formal traces, acknowledging that some information demands reference rather than&nbsp;display.
                 </p>
-                <div class="box" id="peach">
+                <div class="box" id="blue">
                     <ul id="embed-blocks"></ul>
                 </div>
             </section>
 
-            <section>
+            <section id="section-texts" class="content-section">
                 <div class="h2-div" id="pale-blue">
                     <h2>
                         <ul>
@@ -147,12 +181,12 @@
                     Text extends explanation beyond what is immediately visible, preferring over-clarification to&nbsp;misreading.
                 </p>
                 </div>
-                <div class="box" id="lime">
+                <div class="box" id="blue">
                     <ul id="text-blocks"></ul>
                 </div>
             </section>
 
-            <section>
+            <section id="section-links" class="content-section">
                 <div class="h2-div" id="purple">
                     <h2>
                         <ul>
@@ -178,12 +212,12 @@
                 <p>
                     Links persist as formal traces, acknowledging that some information demands reference rather than&nbsp;display.
                 </p>
-                <div class="box" id="orange">
+                <div class="box" id="blue">
                     <ul id="link-blocks"></ul>
                 </div>
             </section>
 
-            <section>
+            <section id="section-attachments" class="content-section">
                 <div class="h2-div" id="red">
                     <h2>
                         <ul>

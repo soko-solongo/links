@@ -16,7 +16,7 @@ html{scroll-behavior: smooth;}
 #blue { background: #1472FF; }
 
 #green { color: #37d6a4; }
-#pink { background: #d497e0; }
+#pink { background: #d497e0; transition: 0.5s ease-in-out; }
 
 #yellow { color: #ffc117; }
 #peach { background: #ff8fa7; }
@@ -37,7 +37,7 @@ body {
     color: var(--black);
     background: var(--background);
     line-height: calc(1.1*var(--spacing));
-    padding-inline: 3%;
+    /* padding-inline: 3%; */
     text-align: center;
     justify-items: center;
 }
@@ -91,20 +91,23 @@ ul {
 
 /* li is representing each block of arena */
 li {
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     will-change: transform;
     transform: rotate(var(--rotation));
+    transition: all 1s ease-in-out;
     /* filter: grayscale(); */
 }
 
 li.rotate {
     transform: initial;
+    transition: all 1s ease-in-out;
     /* filter: grayscale(0); */
     
 }
 
 header li.rotate {
     transform: rotate(calc(-1*var(--rotation)));
+     /* filter: grayscale(0); */
 }
 
 header > .box {
@@ -185,7 +188,7 @@ header > ul {
     flex-direction: column;
     padding-block: calc(2*var(--spacing));
     text-align: center;
-    margin-block-start: calc(6*var(--spacing));
+    /* margin-block-start: calc(6*var(--spacing)); */
 }
 
 .h1-div ul,
@@ -217,13 +220,13 @@ footer {
 
 .clutter li {
     margin: calc(-1*var(--spacing));
-    filter: grayscale();
+    /* filter: grayscale(); */
 }
 
 .clutter li:hover {
     z-index: 10;
     transform: scale(1.2);
-    filter: grayscale(0);
+    /* filter: grayscale(0); */
 }
 
 #channel-blocks li:nth-child(n+16) {
@@ -283,6 +286,8 @@ footer {
 button {
   padding: calc(0.5 * var(--spacing));
   background: #ffb296;
+  position: sticky;
+  top: 0;
 }
 
 button:hover {
@@ -313,10 +318,29 @@ button:hover {
   }
 } */
 
-#channel-blocks.show-images li { display: none;}
+/* #channel-blocks.show-images li { display: none;}
 #channel-blocks.show-images li.image-block { display: block;}
 
 #channel-blocks.show-text li { display: none;}
-#channel-blocks.show-text li.text-block { display: block;}
+#channel-blocks.show-text li.text-block { display: block;} */
 
+/* Hide all sections initially */
+.content-section {
+    display: none;
+    width: 100%;
+}
+
+/* Show only the active section */
+.content-section.active {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    animation: 0.5s ease-in-out;
+}
+
+/* #image-blocks {
+    position: relative;
+    top: calc(-45*var(--spacing));
+    z-index: 10;
+} */
 
