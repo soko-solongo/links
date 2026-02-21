@@ -24,45 +24,77 @@
 
 // selecting all specific sections depending on type
 let sectionAll = document.querySelector('#section-all')
-let sectionImages = document.querySelector('#section-images')
-let sectionTexts = document.querySelector('#section-texts')
-let sectionLinks = document.querySelector('#section-links')
+let sectionImage = document.querySelector('#section-image')
+let sectionText = document.querySelector('#section-text')
+let sectionLink = document.querySelector('#section-link')
+let sectionEmbed = document.querySelector('#section-embed')
+let sectionAttachment = document.querySelector('#section-attachment') 
 
 // select specific buttons
 let showAllButton = document.querySelector('[data-target="section-all"]')
-let showImagesButton = document.querySelector('[data-target="section-images"]')
-let showTextButton = document.querySelector('[data-target="section-texts"]')
-let showLinksButton = document.querySelector('[data-target="section-links"]')
+let showImageButton = document.querySelector('[data-target="section-image"]')
+let showTextButton = document.querySelector('[data-target="section-text"]')
+let showLinkButton = document.querySelector('[data-target="section-link"]')
+let showEmbedButton = document.querySelector('[data-target="section-embed"]')
+let showAttachmentButton = document.querySelector('[data-target="section-attachment"]')
 
 // defining the click functions
 showAllButton.addEventListener('click', () => {
   sectionAll.classList.add('active')
-  sectionImages.classList.remove('active')
-  sectionTexts.classList.remove('active')
-  sectionLinks.classList.remove('active')
+  sectionImage.classList.remove('active')
+  sectionText.classList.remove('active')
+  sectionLink.classList.remove('active')
+  sectionEmbed.classList.remove('active')
+  sectionAttachment.classList.remove('active')
 //   window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
-showImagesButton.addEventListener('click', () => {
+showImageButton.addEventListener('click', () => {
   sectionAll.classList.remove('active')
-  sectionImages.classList.add('active')
-  sectionTexts.classList.remove('active')
-  sectionLinks.classList.remove('active')
+  sectionImage.classList.add('active')
+  sectionText.classList.remove('active')
+  sectionLink.classList.remove('active')
+  sectionEmbed.classList.remove('active')
+  sectionAttachment.classList.remove('active')
 //   window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
 showTextButton.addEventListener('click', () => {
   sectionAll.classList.remove('active')
-  sectionImages.classList.remove('active')
-  sectionTexts.classList.add('active')
-  sectionLinks.classList.remove('active')
+  sectionImage.classList.remove('active')
+  sectionText.classList.add('active')
+  sectionLink.classList.remove('active')
+  sectionEmbed.classList.remove('active')
+  sectionAttachment.classList.remove('active')
 //   window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
-showLinksButton.addEventListener('click', () => {
+showLinkButton.addEventListener('click', () => {
     sectionAll.classList.remove('active')
-    sectionImages.classList.remove('active')
-    sectionTexts.classList.remove('active')
-    sectionLinks.classList.add('active')
+    sectionImage.classList.remove('active')
+    sectionText.classList.remove('active')
+    sectionLink.classList.add('active')
+    sectionEmbed.classList.remove('active')
+    sectionAttachment.classList.remove('active')
+    // window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+
+showEmbedButton.addEventListener('click', () => {
+    sectionAll.classList.remove('active')
+    sectionImage.classList.remove('active')
+    sectionText.classList.remove('active')
+    sectionLink.classList.remove('active')
+    sectionEmbed.classList.add('active')
+    sectionAttachment.classList.remove('active')
+    // window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+
+showAttachmentButton.addEventListener('click', () => {
+    sectionAll.classList.remove('active')
+    sectionImage.classList.remove('active')
+    sectionText.classList.remove('active')
+    sectionLink.classList.remove('active')
+    sectionEmbed.classList.remove('active')
+    sectionAttachment.classList.add('active')
     // window.scrollTo({ top: 0, behavior: 'smooth' })
   })

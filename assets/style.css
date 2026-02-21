@@ -7,6 +7,7 @@
 
     --black: #2b2b2b;
     --background: #FBF0E5;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 html{scroll-behavior: smooth;}
@@ -15,7 +16,7 @@ html{scroll-behavior: smooth;}
 #saffron { color: #ff431d; }
 #blue { background: #1472FF; }
 
-#green { color: #37d6a4; }
+#green { color: #37d6a4; drop-shadow: #d497e0 0 2px 2px;}
 #pink { background: #d497e0; transition: 0.5s ease-in-out; }
 
 #yellow { color: #ffc117; }
@@ -94,13 +95,13 @@ li {
     transition: all 0.3s ease-in-out;
     will-change: transform;
     transform: rotate(var(--rotation));
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     /* filter: grayscale(); */
 }
 
 li.rotate {
     transform: initial;
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     /* filter: grayscale(0); */
     
 }
@@ -127,6 +128,7 @@ header > ul {
     border: 1.5em solid var(--background);
     aspect-ratio: 1/1;
     overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 .image-controller img {
@@ -142,6 +144,7 @@ header > ul {
     position: relative;
     text-align: left;
     background: var(--background);
+    box-shadow: var(--shadow);
 }
 
 /* quotation mark symbol */
@@ -160,6 +163,7 @@ header > ul {
 .audio-embed-controller {
     inline-size: calc(14*var(--spacing));
     overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 .link-controller {
@@ -167,12 +171,14 @@ header > ul {
     max-inline-size: calc(8*var(--spacing));
     background: var(--background);
     border-left: 0.3em solid #b379ff;
+    box-shadow: var(--shadow);
 }
 
 .attachment-controller {
     inline-size: calc(6.5*var(--spacing));
     block-size: 100%;
     overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 /* ------ ADDITIONAL STYLING */
