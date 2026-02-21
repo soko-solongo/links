@@ -169,19 +169,19 @@ let renderBlock = (blockData) => {
 
 // A function to display the owner/collaborator info:
 // !!! NEED TO FIGURE OUT THIS SECTION FOR FOOTER
-let renderUser = (userData) => {
-	let channelUsers = document.querySelector('#channel-users') // Container.
+// let renderUser = (userData) => {
+// 	let channelUsers = document.querySelector('#channel-users') // Container.
 
-	let userAddress =
-		`
-		<address>
-			<h3>${ userData.name }</h3>
-			<p><a href="https://are.na/${ userData.slug }">Are.na profile ↗</a></p>
-		</address>
-		`
+// 	let userAddress =
+// 		`
+// 		<address>
+// 			<h3>${ userData.name }</h3>
+// 			<p><a href="https://are.na/${ userData.slug }">Are.na profile ↗</a></p>
+// 		</address>
+// 		`
 
-	channelUsers.insertAdjacentHTML('beforeend', userAddress)
-}
+// 	channelUsers.insertAdjacentHTML('beforeend', userAddress)
+// }
 
 
 
@@ -218,17 +218,17 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
 	// console.log(json) // Always good to check your response!
 
 	placeChannelInfo(json) // Pass all the data to the first function, above.
-	renderUser(json.owner) // Pass just the nested object `.owner`.
+	// renderUser(json.owner) // Pass just the nested object `.owner`.
 })
 
 // Get your info to put with mine:
 fetchJson(`https://api.are.na/v3/users/${myUsername}/`, (json) => {
-	renderUser(json) // Pass this to the same function, no nesting.
+	// renderUser(json) // Pass this to the same function, no nesting.
 })
 
 // Get your info to put with the owner's:
 fetchJson(`https://api.are.na/v3/users/${ownerUsername}/`, (json) => {
-	renderUser(json) // Pass this to the same function, no nesting.
+	// renderUser(json) // Pass this to the same function, no nesting.
 })
 
 // And the data for the blocks:
@@ -262,7 +262,7 @@ rotateBlocks.forEach((block) => {
 			block.classList.remove(rotateClass)
 		}
 	}, {
-		rootMargin: '-25% 0% -25% 0%', // CSS-ish: top/right/bottom/left.
+		rootMargin: '-25% 0% -15% 0%', // CSS-ish: top/right/bottom/left.
 	})
 
 	sectionObserver.observe(block) // Watch each one!

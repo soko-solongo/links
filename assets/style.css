@@ -7,7 +7,7 @@
 
     --black: #2b2b2b;
     --background: #FBF0E5;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 html{scroll-behavior: smooth;}
@@ -16,7 +16,7 @@ html{scroll-behavior: smooth;}
 #saffron { color: #ff431d; }
 #blue { background: #1472FF; }
 
-#green { color: #37d6a4; drop-shadow: #d497e0 0 2px 2px;}
+#green { color: #37d6a4; }
 #pink { background: #d497e0; transition: 0.5s ease-in-out; }
 
 #yellow { color: #ffc117; }
@@ -145,6 +145,7 @@ header > ul {
     text-align: left;
     background: var(--background);
     box-shadow: var(--shadow);
+    overflow: hidden;
 }
 
 /* quotation mark symbol */
@@ -210,6 +211,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 footer {
@@ -230,14 +232,14 @@ footer {
 }
 
 .clutter li:hover {
-    z-index: 10;
+    z-index: 2;
     transform: scale(1.2);
     /* filter: grayscale(0); */
 }
 
-#channel-blocks li:nth-child(n+16) {
+/* #channel-blocks li:nth-child(n+16) {
     display: none;
-}
+} */
 
 /* ------ MEDIA QUERIES */
 @media (width > 900px) {
@@ -290,15 +292,29 @@ footer {
 /* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
 
 button {
-  padding: calc(0.5 * var(--spacing));
-  background: #ffb296;
-  position: sticky;
-  top: 0;
+    padding-inline: calc(0.6*var(--spacing));
+    padding-block: calc(0.2*var(--spacing));
+    /* box-shadow: var(--shadow); */
 }
 
 button:hover {
     transition: 0.3s ease-in-out;
-  background: #ff8fa7;
+    
+    /* setting the anchor point to left bottom corner */
+    /* transform-origin: left bottom; */
+    transform: rotate(-15deg);
+    box-shadow: var(--shadow);
+}
+
+#controls {
+    display: flex;
+    gap: calc(0.5*var(--spacing));
+    justify-content: center;
+    align-items: center;
+    padding-block: calc(0.5*var(--spacing));
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
 }
 
 /* #channel-blocks {

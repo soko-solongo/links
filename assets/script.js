@@ -46,7 +46,7 @@ showAllButton.addEventListener('click', () => {
   sectionLink.classList.remove('active')
   sectionEmbed.classList.remove('active')
   sectionAttachment.classList.remove('active')
-//   window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
 showImageButton.addEventListener('click', () => {
@@ -56,7 +56,7 @@ showImageButton.addEventListener('click', () => {
   sectionLink.classList.remove('active')
   sectionEmbed.classList.remove('active')
   sectionAttachment.classList.remove('active')
-//   window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
 showTextButton.addEventListener('click', () => {
@@ -66,7 +66,7 @@ showTextButton.addEventListener('click', () => {
   sectionLink.classList.remove('active')
   sectionEmbed.classList.remove('active')
   sectionAttachment.classList.remove('active')
-//   window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
 showLinkButton.addEventListener('click', () => {
@@ -76,7 +76,7 @@ showLinkButton.addEventListener('click', () => {
     sectionLink.classList.add('active')
     sectionEmbed.classList.remove('active')
     sectionAttachment.classList.remove('active')
-    // window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   })
 
 showEmbedButton.addEventListener('click', () => {
@@ -86,7 +86,7 @@ showEmbedButton.addEventListener('click', () => {
     sectionLink.classList.remove('active')
     sectionEmbed.classList.add('active')
     sectionAttachment.classList.remove('active')
-    // window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   })
 
 showAttachmentButton.addEventListener('click', () => {
@@ -96,5 +96,5 @@ showAttachmentButton.addEventListener('click', () => {
     sectionLink.classList.remove('active')
     sectionEmbed.classList.remove('active')
     sectionAttachment.classList.add('active')
-    // window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   })
