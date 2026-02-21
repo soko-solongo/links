@@ -37,8 +37,7 @@ body {
     font-weight: 400;
     color: var(--black);
     background: var(--background);
-    line-height: calc(1.1*var(--spacing));
-    /* padding-inline: 3%; */
+    line-height: calc(1*var(--spacing));
     text-align: center;
     justify-items: center;
 }
@@ -50,7 +49,7 @@ h2 {
     text-transform: uppercase;
 }
 
-h1 { font-size: calc(3.5*var(--spacing)); }
+h1 { font-size: calc(2.8*var(--spacing)); }
 h2 { font-size: calc(2.5*var(--spacing)); }
 
 p {
@@ -77,6 +76,7 @@ a:hover { color: #ff431d; }
     min-block-size: 60vh;
     padding-block: calc(2*var(--spacing));
     margin-block: calc(1.2*var(--spacing));
+    overflow: hidden;
 }
 
 ul {
@@ -85,7 +85,7 @@ ul {
     justify-content: center;
     align-items: center;
     gap: calc(0.5*var(--spacing));
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-inline: auto;
     padding: var(--spacing);
 }
@@ -93,30 +93,25 @@ ul {
 /* li is representing each block of arena */
 li {
     transition: all 0.3s ease-in-out;
-    will-change: transform;
     transform: rotate(var(--rotation));
     transition: all 0.3s ease-in-out;
-    /* filter: grayscale(); */
 }
 
 li.rotate {
     transform: initial;
     transition: all 0.3s ease-in-out;
-    /* filter: grayscale(0); */
-    
 }
 
 header li.rotate {
     transform: rotate(calc(-1*var(--rotation)));
-     /* filter: grayscale(0); */
 }
 
-header > .box {
-    /* filter: grayscale(); */
+header ul {
+    padding-block: calc(1.2*var(--spacing));
 }
 
-header > ul {
-    inline-size: 100%;
+header .title {
+    padding-block: calc(1.5*var(--spacing));
 }
 
 
@@ -160,6 +155,7 @@ header > ul {
     left: 0.2em;
 }
 
+/* !!! NEED TO DESIGN HOW IT LOOKS */
 .embed-controller,
 .audio-embed-controller {
     inline-size: calc(14*var(--spacing));
@@ -175,6 +171,7 @@ header > ul {
     box-shadow: var(--shadow);
 }
 
+/* !!! NEED TO DESIGN HOW IT LOOKS */
 .attachment-controller {
     inline-size: calc(6.5*var(--spacing));
     block-size: 100%;
@@ -183,29 +180,20 @@ header > ul {
 }
 
 /* ------ ADDITIONAL STYLING */
-.h1-div {
-    display: flex;
-    flex-direction: column;
-    gap: calc(2*var(--spacing));
-    padding-block: calc(4*var(--spacing));
-}
-
-.h2-div {
+.title {
     display: flex;
     flex-direction: column;
     padding-block: calc(2*var(--spacing));
     text-align: center;
-    /* margin-block-start: calc(6*var(--spacing)); */
 }
 
-.h1-div ul,
-.h2-div ul {
-    gap: calc(0.1*var(--spacing));
-    padding-inline: initial;
+.title ul {
+    gap: calc(0.15*var(--spacing));
+    /* padding-inline: initial; */
     overflow: initial;
 }
 
-header,
+
 section,
 footer {
     display: flex;
@@ -237,41 +225,82 @@ footer {
     /* filter: grayscale(0); */
 }
 
-/* #channel-blocks li:nth-child(n+16) {
+
+/* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
+
+button {
+    padding-inline: calc(0.7*var(--spacing));
+    padding-block: calc(0.4*var(--spacing));
+    /* box-shadow: var(--shadow); */
+}
+
+button:hover {
+    transition: 0.3s ease-in-out;
+    transform: rotate(-15deg);
+    box-shadow: var(--shadow);
+}
+
+#controls {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: calc(0.6*var(--spacing));
+    justify-content: center;
+    align-items: center;
+    padding-block: calc(0.3*var(--spacing));
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+/* hiding all sections initially */
+.content-section {
     display: none;
-} */
+    width: 100%;
+}
+
+/* showing only the active section */
+.content-section.active {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    animation: 0.5s ease-in-out;
+}
 
 /* ------ MEDIA QUERIES */
 @media (width > 900px) {
     :root {
-        font-size: 120%;
+        font-size: 110%;
     }
 
-    .h1-div,
-    .h2-div,
+    .title {
+        flex-direction: row;
+        gap: 0;
+    }
+
     footer {
         flex-direction: row;
-    }
-
-    .h1-div {
-        gap: calc(2.5*var(--spacing));
-    }
-
-    .h2-div {
-        gap: calc(1.5*var(--spacing));
-    }
-
-    footer {
         inline-size: 100%;
         justify-content: space-between;
+    }
+
+    footer p {
+        margin-inline: var(--spacing);
+    }
+
+    #controls {
+        grid-template-columns: repeat(6, auto);
+        grid-template-rows: repeat(1, auto);
+        padding-block: var(--spacing);
     }
 }
 
 
 @media (width > 1400px) {
-    .h1-div,
-    .h2-div {
-        gap: calc(7*var(--spacing));
+    
+    header .title,
+    .title {
+        gap: calc(5*var(--spacing));
+        padding-block: calc(3*var(--spacing));
     }
 
     h1,
@@ -282,87 +311,5 @@ footer {
     .box {
         padding: calc(2.5*var(--spacing));
     }
-
-    #channel-blocks li:nth-child(n+16) {
-    display: initial;
-    }
 }
-
-
-/* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
-
-button {
-    padding-inline: calc(0.6*var(--spacing));
-    padding-block: calc(0.2*var(--spacing));
-    /* box-shadow: var(--shadow); */
-}
-
-button:hover {
-    transition: 0.3s ease-in-out;
-    
-    /* setting the anchor point to left bottom corner */
-    /* transform-origin: left bottom; */
-    transform: rotate(-15deg);
-    box-shadow: var(--shadow);
-}
-
-#controls {
-    display: flex;
-    gap: calc(0.5*var(--spacing));
-    justify-content: center;
-    align-items: center;
-    padding-block: calc(0.5*var(--spacing));
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-}
-
-/* #channel-blocks {
-
-  &. show-images {
-    li {
-      display: none;
-    }
-
-    li.image-block {
-      display: block;
-    }
-  }
-
-  &.show-text {
-    li {
-      display: none;
-    }
-
-    li.text-block {
-      display: block;
-    }
-  }
-} */
-
-/* #channel-blocks.show-images li { display: none;}
-#channel-blocks.show-images li.image-block { display: block;}
-
-#channel-blocks.show-text li { display: none;}
-#channel-blocks.show-text li.text-block { display: block;} */
-
-/* Hide all sections initially */
-.content-section {
-    display: none;
-    width: 100%;
-}
-
-/* Show only the active section */
-.content-section.active {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    animation: 0.5s ease-in-out;
-}
-
-/* #image-blocks {
-    position: relative;
-    top: calc(-45*var(--spacing));
-    z-index: 10;
-} */
 
