@@ -140,12 +140,15 @@ let renderBlock = (blockData) => {
 				`
 				<li class="embed-block">
                     <div class="embed-controller">
-                        ${ blockData.embed.html }
+						<img src="${ blockData.image.medium.src_2x}" alt="image of embedded video">
+						<p><a href="${ blockData.embed.url}">Experience the video&nbsp;↗</a></p>
                     </div>
 				</li>
 				`
 			embedBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+
+			console.log(blockData.embed.html) // See what the API gives us for embedded media! It’s usually an `<iframe>`, but not always.
 		}
 
 		// Linked audio!
@@ -154,8 +157,9 @@ let renderBlock = (blockData) => {
 			let linkedAudioItem =
 			`
 				<li class="embed-block">
-					<div class="audio-embed-controller">
-						${blockData.embed.html}
+					<div class="embed-controller">
+						<img src="${ blockData.image.medium.src_2x}" alt="image of embedded audio">
+						<p><a href="${ blockData.embed.url }">Experience the audio&nbsp;↗</a></p>
 					</div>
 				</li>
 				`
@@ -262,7 +266,7 @@ rotateBlocks.forEach((block) => {
 			block.classList.remove(rotateClass)
 		}
 	}, {
-		rootMargin: '-25% 0% -15% 0%', // CSS-ish: top/right/bottom/left.
+		rootMargin: '-0% 0% 25% 0%', // CSS-ish: top/right/bottom/left.
 	})
 
 	sectionObserver.observe(block) // Watch each one!

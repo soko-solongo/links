@@ -87,6 +87,7 @@ ul {
     /* overflow: hidden; */
     margin-inline: auto;
     padding: var(--spacing);
+    /* max-inline-size: calc(50*var(--spacing)); */
 }
 
 /* li is representing each block of arena */
@@ -130,7 +131,7 @@ header ul {
     box-shadow: var(--shadow);
 }
 
-.image-controller img {
+img {
     block-size: 100%;
     inline-size: 100%;
     object-fit: cover;
@@ -139,7 +140,7 @@ header ul {
 .image-controller:hover {
     border: 0.2em solid var(--background);
     transform: scale(1.5);
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .text-controller {
@@ -170,11 +171,24 @@ header ul {
 }
 
 /* !!! NEED TO DESIGN HOW IT LOOKS */
-.embed-controller,
-.audio-embed-controller {
-    inline-size: calc(14*var(--spacing));
-    overflow: hidden;
+
+.embed-controller {
+    display: flex;
+    flex-direction: row;
+    gap: calc(0.5*var(--spacing));
+    justify-self: center;
     box-shadow: var(--shadow);
+    background: var(--background);
+    border: 0.8em solid var(--background);
+}
+
+.embed-controller img {
+    inline-size: calc(3*var(--spacing));
+    block-size: calc(3*var(--spacing));
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
 }
 
 .link-controller {
@@ -187,7 +201,6 @@ header ul {
     display: inline-block;
     box-sizing: border-box;
     inline-size: auto;
-    /* font-size: calc(0.6*var(--spacing)); */
 }
 
 /* !!! NEED TO DESIGN HOW IT LOOKS */
