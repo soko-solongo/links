@@ -136,6 +136,12 @@ header ul {
     object-fit: cover;
 }
 
+.image-controller:hover {
+    border: 0.2em solid var(--background);
+    transform: scale(1.5);
+    transition: 0.3s ease-in-out;
+}
+
 .text-controller {
     padding: calc(0.6*var(--spacing));
     padding-block-start: calc(2.7*var(--spacing));
@@ -206,6 +212,17 @@ header ul {
     clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
     top: -2.13em;
     left: 0;
+}
+
+.pdf-controller::after {
+    content: "PDF";
+    position: absolute;
+    top: -2em;
+    left: 1em;
+    font-family: var(--body-font);
+    color: var(--background);
+    font-weight: 600;
+    font-size: calc(0.6*var(--spacing));
 }
 
 .attachment-block {
