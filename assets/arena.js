@@ -141,7 +141,7 @@ let renderBlock = (blockData) => {
 				<li class="embed-block">
                     <div class="embed-controller">
 						<img src="${ blockData.image.medium.src_2x}" alt="image of embedded video">
-						<p><a href="${ blockData.embed.url}">Experience the video&nbsp;↗</a></p>
+						<p><a href="${ blockData.source.url }">Experience the video&nbsp;↗</a></p>
                     </div>
 				</li>
 				`
@@ -159,7 +159,7 @@ let renderBlock = (blockData) => {
 				<li class="embed-block">
 					<div class="embed-controller">
 						<img src="${ blockData.image.medium.src_2x}" alt="image of embedded audio">
-						<p><a href="${ blockData.embed.url }">Experience the audio&nbsp;↗</a></p>
+						<p><a href="${ blockData.source.url }">Experience the audio&nbsp;↗</a></p>
 					</div>
 				</li>
 				`
