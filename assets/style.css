@@ -191,10 +191,26 @@ header ul {
     background: var(--background);
     padding: calc(0.5*var(--spacing));
     padding-block-start: calc(2.5*var(--spacing));
-    overflow: hidden;
-    box-shadow: var(--shadow);
     text-align: left;
     align-self: center;
+    position: relative;
+}
+
+.pdf-controller::before {
+    content: "";
+    position: absolute;
+    display: block;
+    inline-size: 60%;
+    block-size: calc(1.5*var(--spacing));
+    background: #ff6c6c;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+    top: -2.13em;
+    left: 0;
+}
+
+.attachment-block {
+    box-shadow: var(--shadow);
+    margin-block: var(--spacing);
 }
 
 /* ------ ADDITIONAL STYLING */
@@ -238,7 +254,8 @@ footer {
     /* filter: grayscale(); */
 }
 
-.clutter li:hover {
+.clutter li:hover,
+li:hover {
     z-index: 2;
     transform: scale(1.2);
     /* filter: grayscale(0); */

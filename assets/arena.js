@@ -109,8 +109,6 @@ let renderBlock = (blockData) => {
 				`
 			attachmentBlocks.insertAdjacentHTML('beforeend', pdfItem)
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
-
-			// console.log(json)
 		}
 
 		// Uploaded audio!
