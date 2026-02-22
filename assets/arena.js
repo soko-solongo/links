@@ -103,12 +103,14 @@ let renderBlock = (blockData) => {
 				`
 				<li class="attachment-block">
 					<div class="pdf-controller">
-						<iframe src="${ blockData.attachment.url }"></iframe>
+						<p><a href="${ blockData.attachment.url }">${ blockData.title }&nbsp;↗</a></p>
 					</div>
 				</li>
 				`
 			attachmentBlocks.insertAdjacentHTML('beforeend', pdfItem)
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+
+			// console.log(json)
 		}
 
 		// Uploaded audio!
