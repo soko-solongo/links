@@ -191,6 +191,12 @@ img {
     object-position: center;
 }
 
+.embed-controller:hover img {
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out
+    /* border: 0.2em solid var(--background); */
+}
+
 .link-controller {
     padding-inline: calc(0.3*var(--spacing));
     padding-block: calc(0.4*var(--spacing));
