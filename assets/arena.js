@@ -258,6 +258,9 @@ rotateBlocks.forEach((block) => {
 	let randomRotation = Math.floor(Math.random() * (20 - (-20) + 1)) + (-20); // Random rotation between -20 and +20 degrees (including -20, 0, and +20).
 	block.style.setProperty('--rotation', `${randomRotation}deg`)
 
+	let randomTranslation = Math.floor(Math.random() * (60 - (-60) + 1)) + (-60); // Random translation between -60px and +60px across Y (vertical axis).
+	block.style.setProperty('--translation', `${randomTranslation}px`)
+
 	let sectionObserver = new IntersectionObserver(([entry])=> {
 		// When it is intersecting, apply the class; otherwise, remove it.
 		if (entry.isIntersecting) {
@@ -266,7 +269,7 @@ rotateBlocks.forEach((block) => {
 			block.classList.remove(rotateClass)
 		}
 	}, {
-		rootMargin: '-0% 0% 25% 0%', // CSS-ish: top/right/bottom/left.
+		rootMargin: '35% 0% 35% 0%', // CSS-ish: top/right/bottom/left.
 	})
 
 	sectionObserver.observe(block) // Watch each one!
