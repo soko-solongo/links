@@ -101,15 +101,15 @@ li.rotate {
     transition: all 1.2s ease-in-out;
 }
 
-header li.rotate {
+#section-all li.rotate {
     transform: rotate(calc(-1*var(--rotation)));
 }
 
-header ul {
+#section-all ul {
     padding-block: calc(1.2*var(--spacing));
 }
 
-.title {
+header {
     padding-block: calc(2.5*var(--spacing));
 }
 
@@ -249,14 +249,14 @@ img {
 }
 
 /* ------ ADDITIONAL STYLING */
-.title {
+header {
     display: flex;
     flex-direction: column;
     padding-block: calc(2*var(--spacing));
     text-align: center;
 }
 
-.title ul {
+header ul {
     gap: calc(0.15*var(--spacing));
     /* padding-inline: initial; */
     overflow: initial;
@@ -345,7 +345,7 @@ nav {
         font-size: 110%;
     }
 
-    .title {
+    header {
         flex-direction: row;
         gap: 0;
     }
@@ -370,8 +370,8 @@ nav {
 
 @media (width > 1400px) {
     
-    header .title,
-    .title {
+    #section-all header,
+    header {
         gap: calc(5*var(--spacing));
         padding-block: calc(3*var(--spacing));
     }
