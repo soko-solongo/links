@@ -49,7 +49,7 @@ body {
     font-weight: 400;
     color: var(--black);
     background: var(--background);
-    line-height: calc(1*var(--spacing));
+    line-height: var(--spacing);
     text-align: center;
     justify-items: center;
 }
@@ -112,11 +112,11 @@ li {
 }
 
 #section-all {
-    & li.rotate {
+    li.rotate {
     transform: rotate(calc(-1*var(--rotation)));
     }
 
-    & ul {
+    ul {
         padding-block: calc(1.2*var(--spacing));
     }
 }
@@ -183,7 +183,7 @@ img {
     background: var(--background);
     border: 0.8em solid var(--background);
 
-    & img {
+    img {
         inline-size: calc(3*var(--spacing));
         block-size: calc(3*var(--spacing));
         overflow: hidden;
@@ -258,7 +258,7 @@ header {
     text-align: center;
     padding-block: calc(2.5*var(--spacing));
 
-    & ul {
+    ul {
         gap: calc(0.15*var(--spacing));
         /* overflow: hidden; */
     }
@@ -285,7 +285,7 @@ footer {
     gap: calc(-1*var(--spacing));
     overflow: initial;
 
-    & li {
+    li {
         margin: calc(-1*var(--spacing));
     }
 }
