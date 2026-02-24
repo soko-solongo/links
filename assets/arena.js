@@ -37,7 +37,7 @@ let renderBlock = (blockData) => {
 			`
             <li class="link-block">
                 <div class="link-controller">
-                    <p><a href="${ blockData.source.url }">${blockData.title}&nbsp;↗&#xFE0E;</a></p>
+                    <p><a href="${ blockData.source.url }">${blockData.title}&nbsp;\u2197\uFE0E</a></p>
                 </div>
             </li>
 			`
@@ -103,7 +103,7 @@ let renderBlock = (blockData) => {
 				`
 				<li class="attachment-block">
 					<div class="pdf-controller">
-						<p><a href="${ blockData.attachment.url }">${ blockData.title }&nbsp;↗&#xFE0E;</a></p>
+						<p><a href="${ blockData.attachment.url }">${ blockData.title }&nbsp;\u2197\uFE0E</a></p>
 					</div>
 				</li>
 				`
@@ -141,7 +141,7 @@ let renderBlock = (blockData) => {
 				<li class="embed-block">
                     <div class="embed-controller">
 						<img src="${ blockData.image.medium.src_2x}" alt="image of embedded video">
-						<p><a href="${ blockData.source.url }">Experience the video&nbsp;↗&#xFE0E;</a></p>
+						<p><a href="${ blockData.source.url }">Experience the video&nbsp;\u2197\uFE0E</a></p>
                     </div>
 				</li>
 				`
@@ -159,7 +159,7 @@ let renderBlock = (blockData) => {
 				<li class="embed-block">
 					<div class="embed-controller">
 						<img src="${ blockData.image.medium.src_2x}" alt="image of embedded audio">
-						<p><a href="${ blockData.source.url }">Experience the audio&nbsp;↗&#xFE0E;</a></p>
+						<p><a href="${ blockData.source.url }">Experience the audio&nbsp;\u2197\uFE0E</a></p>
 					</div>
 				</li>
 				`
