@@ -4,21 +4,14 @@ let ownerUsername = 'kinza-ghanchi' // For linking to the channel owner's profil
 
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
-let placeChannelInfo = (channelData) => {
-	// Target some elements in your HTML:
+	let placeChannelInfo = (channelData) => {
 	let channelTitle = document.querySelector('#channel-title')
-	// let channelDescription = document.querySelector('#channel-description')
-	// let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = channelData.title
-	// channelDescription.innerHTML = channelData.description.html
-	// channelCount.innerHTML = channelData.counts.blocks
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
-
-
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
@@ -30,7 +23,6 @@ let renderBlock = (blockData) => {
     let embedBlocks = document.querySelector('#embed-blocks')
     let attachmentBlocks = document.querySelector('#attachment-blocks')
 
-	// NEED TO REVISIT Links!
 	if (blockData.type == 'Link') {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
@@ -41,8 +33,6 @@ let renderBlock = (blockData) => {
                 </div>
             </li>
 			`
-        // Always good to check your HTML string before you insert it.
-		// And puts it into the page!
 		linkBlocks.insertAdjacentHTML('beforeend', linkItem)
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
@@ -63,7 +53,6 @@ let renderBlock = (blockData) => {
 
 	}
 
-	// NEED TO REVISIT Text!
 	else if (blockData.type == 'Text') {
 		let textItem =
 			`
@@ -77,7 +66,6 @@ let renderBlock = (blockData) => {
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
-	// NEED TO REVISIT Uploaded (not linked) media…
 	else if (blockData.type == 'Attachment') {
 		let contentType = blockData.attachment.content_type // Save us some repetition.
 

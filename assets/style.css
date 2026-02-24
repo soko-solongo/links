@@ -24,7 +24,6 @@
 
 html{scroll-behavior: smooth;}
 
-
 #section-all header { color: #ff431d; }
 #section-all .box   { background: #1472FF; }
 
@@ -75,11 +74,9 @@ h2 { font-size: calc(2.5*var(--spacing)); }
 
 p { max-inline-size: 50ch; }
 
-p:has(strong) {
-    padding-inline: var(--gutter);
-}
-
 strong { font-weight: 600; }
+
+p:has(strong) { padding-inline: var(--gutter);}
 
 a { 
     transition: color var(--transition);
@@ -123,16 +120,12 @@ li {
                    translateY(calc(-0.1*var(--translation)));
         transition: all 1.2s ease-in-out;
     }
-}
 
-#section-all {
-    li.rotate {
-    /* transform: rotate(calc(-1*var(--rotation))); */
+    &:hover {
+        z-index: 2;
+        transform: scale(1.2);
+        transition: var(--transition);
     }
-
-    /* ul {
-        padding-block: calc(1.2*var(--spacing));
-    } */
 }
 
 /* ------ ARENA BLOCKS: EACH CONTENT TYPE STYLING */
@@ -203,9 +196,7 @@ img {
 }
 
 .link-controller {
-    /* padding: calc(0.3*var(--spacing)); */
     padding: var(--gutter);
-    /* padding-block: calc(0.4*var(--spacing)); */
     max-inline-size: calc(8*var(--spacing));
     background: var(--background);
     border-left: 0.3em solid #b379ff;
@@ -265,7 +256,6 @@ header {
 
     ul {
         gap: calc(0.15*var(--spacing));
-        /* overflow: hidden; */
     }
 }
 
@@ -290,21 +280,19 @@ footer {
     gap: calc(-1*var(--spacing));
     overflow: initial;
 
-    li {
-        margin: calc(-1*var(--spacing));
+    li { 
+        margin: calc(-1*var(--spacing)); 
+
+        &.rotate {
+            transform: rotate(calc(-1*var(--rotation)));
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            transition: var(--transition);
+        }
     }
 }
-
-.clutter li:hover,
-li:hover {
-    z-index: 2;
-    transform: scale(1.2);
-    transition: var(--transition);
-}
-
-/* !!!something is fishy around here
-something is overriding my clutter interaction */
-
 
 /* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
 
