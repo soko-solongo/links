@@ -12,24 +12,32 @@
 
 html{scroll-behavior: smooth;}
 
-/* ------ color ids ------ */
-#saffron { color: #ff431d; }
-#blue { background: #1472FF; }
 
-#green { color: #37d6a4; }
-#pink { background: #d497e0; transition: 0.5s ease-in-out; }
+#section-all header { color: #ff431d; }
+#section-all .box   { background: #1472FF; }
 
-#yellow { color: #ffc117; }
-#peach { background: #ff8fa7; }
+#section-image header { color: #37d6a4; }
+#section-image .box   { background: #d497e0; }
 
-#pale-blue { color: #36a8ff; }
-#lime { background: #d6f094; }
+#section-embed header { color: #ffc117; }
+#section-embed .box   { background: #ff8fa7; }
 
-#purple { color: #b379ff; }
-#orange { background: #ffb296; }
+#section-text header { color: #36a8ff; }
+#section-text .box   { background: #d6f094; }
 
-#red { color: #ff6c6c; }
-#turquose { background: #5cecdd; }
+#section-link header { color: #b379ff; }
+#section-link .box   { background: #ffb296; }
+
+#section-attachment header { color: #ff6c6c; }
+#section-attachment .box   { background: #5cecdd; }
+
+/* button colors matching their corresponding section box */
+[data-target="section-all"] { background: #1472FF; }
+[data-target="section-image"] { background: #d497e0; }
+[data-target="section-embed"] { background: #ff8fa7; }
+[data-target="section-text"] { background: #d6f094; }
+[data-target="section-link"] { background: #ffb296; }
+[data-target="section-attachment"] { background: #5cecdd; }
 
 body {
     font-family: var(--body-font);
