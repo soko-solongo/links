@@ -247,7 +247,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 	})
 
 
-// ATTRIBUTION: the following code structure is from T&I 2526 course curriculum: https://typography-interaction-2526.github.io/topic/javascript/#watching-for-scrolling
+// ATTRIBUTION: the following sectionObserver code structure is from T&I 2526 course curriculum: https://typography-interaction-2526.github.io/topic/javascript/#watching-for-scrolling
 let rotateClass = 'rotate' // Set up variables again.
 let rotateBlocks = document.querySelectorAll('li') // Gets all of them.
 
@@ -269,7 +269,7 @@ rotateBlocks.forEach((block) => {
 			block.classList.remove(rotateClass)
 		}
 	}, {
-		rootMargin: '35% 0% 35% 0%', // CSS-ish: top/right/bottom/left.
+		rootMargin: '25% 0% 25% 0%', // CSS-ish: top/right/bottom/left.
 	})
 
 	sectionObserver.observe(block) // Watch each one!
