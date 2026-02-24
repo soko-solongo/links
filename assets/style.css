@@ -10,6 +10,7 @@
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 
     --transition: 0.4s ease-in-out;
+    --gutter: calc(0.5*var(--spacing));
 }
 
 html{scroll-behavior: smooth;}
@@ -84,7 +85,7 @@ a {
     align-items: center;
     min-block-size: 70vh;
     inline-size: 100%;
-    padding-block: calc(2*var(--spacing));
+    padding-block: calc(4*var(--spacing));
     margin-block: calc(1.2*var(--spacing));
     overflow: hidden;
 }
@@ -94,7 +95,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: calc(0.5*var(--spacing));
+    gap: var(--gutter);
     margin-inline: auto;
     padding: var(--spacing);
 }
@@ -176,7 +177,7 @@ img {
 .embed-controller {
     display: flex;
     flex-direction: row;
-    gap: calc(0.5*var(--spacing));
+    gap: var(--gutter);
     justify-self: center;
     box-shadow: var(--shadow);
     background: var(--background);
@@ -215,7 +216,7 @@ img {
     inline-size: calc(10*var(--spacing));
     block-size: calc(6*var(--spacing));
     background: var(--background);
-    padding: calc(0.5*var(--spacing));
+    padding: var(--gutter);
     padding-block-start: calc(2.5*var(--spacing));
     text-align: left;
     align-self: center;
@@ -275,7 +276,7 @@ footer {
 
 footer {
     margin-block-start: calc(10*var(--spacing));
-    gap: calc(0.5*var(--spacing));
+    gap: var(--gutter);
     padding-block: var(--spacing);
 }
 
@@ -377,6 +378,9 @@ nav {
     h1,
     h2 { transform: scale(1.5); }
 
-    .box { padding: calc(2.5*var(--spacing)); }
+    .box { 
+        padding-block: calc(4*var(--spacing)); 
+        padding-inline: calc(2.5*var(--spacing)); 
+    }
 }
 
