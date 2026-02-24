@@ -312,7 +312,7 @@ button:hover {
     box-shadow: var(--shadow);
 }
 
-#controls {
+nav {
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: calc(0.6*var(--spacing));
