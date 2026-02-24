@@ -93,10 +93,9 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-block-size: 70vh;
-    inline-size: 100%;
+    min-block-size: 100vh;
+    inline-size: 100vw;
     padding-block: var(--negative-spacing);
-    /* margin-block: calc(1.2*var(--spacing)); */
     overflow: hidden;
 }
 
@@ -195,13 +194,6 @@ img {
         object-fit: cover;
         object-position: center;
     }
-
-    &:hover img {
-        /* transform: scale(1.2); */
-        /* transition: var(--transition); */
-        /* border: 0.2em solid var(--background); */
-    
-    }
 }
 
 .link-controller {
@@ -263,6 +255,7 @@ header {
     text-align: center;
     padding-block-start: var(--negative-spacing);
     padding-block-end: var(--spacing);
+    gap: var(--gutter);
 
     ul {
         gap: calc(0.15*var(--spacing));
@@ -350,15 +343,16 @@ nav {
 @media (width > 900px) {
     :root {
         font-size: 110%;
+        --gutter: calc(0.6*var(--spacing));
     }
 
     body {
-        margin-inline: 3%;
+        /* margin-inline: 3%; */
     }
 
     header {
         flex-direction: row;
-        gap: 0;
+        gap: calc(3.5*var(--gutter))
     }
 
     footer {
@@ -367,7 +361,8 @@ nav {
         justify-content: space-between;
     }
 
-    /* address { margin-inline: var(--spacing); } */
+    h1,
+    h2 { transform: scale(1.25); }
 
     nav {
         grid-template-columns: repeat(6, auto);
@@ -378,8 +373,6 @@ nav {
     .box {
         padding-block: calc(1.5*var(--negative-spacing));
         padding-inline: calc(1*var(--spacing));
-        /* inline-size: 100vw; */
-        inline-size: 100%;
 
         ul {
             max-inline-size: calc(40*var(--spacing));
@@ -391,8 +384,8 @@ nav {
 @media (width > 1400px) {
     
     header {
-        gap: calc(5*var(--spacing));
         padding-block: var(--negative-spacing);
+        gap: calc(8*var(--gutter))
     }
 
     h1,
