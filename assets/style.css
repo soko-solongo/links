@@ -70,6 +70,7 @@ h1 { font-size: calc(2.8*var(--spacing)); }
 h2 { font-size: calc(2.5*var(--spacing)); }
 
 p { max-inline-size: 90%; }
+/* p { max-inline-size: 50ch; } */
 
 strong { font-weight: 600; }
 
@@ -111,7 +112,7 @@ li {
     transform: rotate(var(--rotation)) translateY(var(--translation));
 
     &.rotate {
-        transform: rotate(calc(-0.2*var(--rotation))) translateY(calc(-0.2*var(--translation)));
+        transform: rotate(calc(-0.3*var(--rotation))) translateY(calc(-0.1*var(--translation)));
         transition: all 1.2s ease-in-out;
     }
 }
@@ -347,6 +348,10 @@ nav {
         font-size: 110%;
     }
 
+    body {
+        margin-inline: 3%;
+    }
+
     header {
         flex-direction: row;
         gap: 0;
@@ -358,7 +363,7 @@ nav {
         justify-content: space-between;
     }
 
-    address { margin-inline: var(--spacing); }
+    /* address { margin-inline: var(--spacing); } */
 
     nav {
         grid-template-columns: repeat(6, auto);
