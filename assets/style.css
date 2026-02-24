@@ -378,6 +378,12 @@ nav {
     .box {
         padding-block: calc(1.5*var(--negative-spacing));
         padding-inline: calc(1*var(--spacing));
+        /* inline-size: 100vw; */
+        inline-size: 100%;
+
+        ul {
+            max-inline-size: calc(40*var(--spacing));
+        }
     }
 }
 
