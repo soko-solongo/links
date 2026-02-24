@@ -1,3 +1,8 @@
+/* IMPROVEMENTS MADE FROM LAST ASSIGNMENT:
+1. 
+2.
+3.  */
+
 @import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Paytone+One&display=swap');
 
 :root{
@@ -85,8 +90,8 @@ a {
     align-items: center;
     min-block-size: 70vh;
     inline-size: 100%;
-    padding-block: calc(4*var(--spacing));
-    margin-block: calc(1.2*var(--spacing));
+    padding-block: calc(3*var(--spacing));
+    /* margin-block: calc(1.2*var(--spacing)); */
     overflow: hidden;
 }
 
@@ -120,12 +125,6 @@ li {
         padding-block: calc(1.2*var(--spacing));
     }
 }
-
-#channel-blocks {
-    padding-block-start: calc(3*var(--spacing));
-    padding-block-end: calc(5*var(--spacing));
-}
-
 
 /* ------ ARENA BLOCKS: EACH CONTENT TYPE STYLING */
 
@@ -201,8 +200,8 @@ img {
 }
 
 .link-controller {
-    padding-inline: calc(0.3*var(--spacing));
-    padding-block: calc(0.4*var(--spacing));
+    padding: calc(0.3*var(--spacing));
+    /* padding-block: calc(0.4*var(--spacing)); */
     max-inline-size: calc(8*var(--spacing));
     background: var(--background);
     border-left: 0.3em solid #b379ff;
@@ -256,7 +255,8 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-block: calc(2.5*var(--spacing));
+    padding-block-start: calc(3*var(--spacing));
+    padding-block-end: var(--spacing);
 
     ul {
         gap: calc(0.15*var(--spacing));
@@ -272,11 +272,11 @@ footer {
     align-items: center;
     position: relative;
     inline-size: 100%;
+    gap: calc(2.5*var(--gutter));
 }
 
 footer {
     margin-block-start: calc(10*var(--spacing));
-    gap: var(--gutter);
     padding-block: var(--spacing);
 }
 
@@ -365,6 +365,10 @@ nav {
         grid-template-rows: repeat(1, auto);
         padding-block: var(--spacing);
     }
+
+    .box {
+        padding-block: calc(5*var(--spacing));
+    }
 }
 
 
@@ -379,8 +383,7 @@ nav {
     h2 { transform: scale(1.5); }
 
     .box { 
-        padding-block: calc(4*var(--spacing)); 
-        padding-inline: calc(2.5*var(--spacing)); 
+        padding-block: calc(6*var(--spacing)); 
     }
 }
 
