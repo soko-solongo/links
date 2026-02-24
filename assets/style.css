@@ -373,6 +373,7 @@ nav {
 
     .box {
         padding-block: calc(5*var(--spacing));
+        padding-inline: calc(1*var(--spacing));
     }
 }
 
@@ -388,7 +389,8 @@ nav {
     h2 { transform: scale(1.5); }
 
     .box { 
-        padding-block: calc(6*var(--spacing)); 
+        padding-block: calc(6*var(--spacing));
+        padding-inline: calc(2*var(--spacing));
     }
 }
 
