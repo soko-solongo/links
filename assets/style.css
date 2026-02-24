@@ -270,7 +270,7 @@ header {
 
     & ul {
         gap: calc(0.15*var(--spacing));
-        overflow: hidden;
+        /* overflow: hidden; */
     }
 }
 
