@@ -95,10 +95,8 @@ ul {
     justify-content: center;
     align-items: center;
     gap: calc(0.5*var(--spacing));
-    /* overflow: hidden; */
     margin-inline: auto;
     padding: var(--spacing);
-    /* max-inline-size: calc(50*var(--spacing)); */
 }
 
 /* li is representing each block of arena */
@@ -120,14 +118,6 @@ li {
     & ul {
         padding-block: calc(1.2*var(--spacing));
     }
-}
-
-/* #section-all ul {
-    padding-block: calc(1.2*var(--spacing));
-} */
-
-header {
-    padding-block: calc(2.5*var(--spacing));
 }
 
 #channel-blocks {
@@ -221,7 +211,6 @@ img {
     inline-size: auto;
 }
 
-/* !!! NEED TO DESIGN HOW IT LOOKS */
 .pdf-controller {
     inline-size: calc(10*var(--spacing));
     block-size: calc(6*var(--spacing));
@@ -265,8 +254,8 @@ img {
 header {
     display: flex;
     flex-direction: column;
-    padding-block: calc(2*var(--spacing));
     text-align: center;
+    padding-block: calc(2.5*var(--spacing));
 
     & ul {
         gap: calc(0.15*var(--spacing));
@@ -368,9 +357,7 @@ nav {
         justify-content: space-between;
     }
 
-    address {
-        margin-inline: var(--spacing);
-    }
+    address { margin-inline: var(--spacing); }
 
     nav {
         grid-template-columns: repeat(6, auto);
@@ -382,19 +369,14 @@ nav {
 
 @media (width > 1400px) {
     
-    #section-all header,
     header {
         gap: calc(5*var(--spacing));
         padding-block: calc(3*var(--spacing));
     }
 
     h1,
-    h2 {
-        transform: scale(1.5);
-    }
+    h2 { transform: scale(1.5); }
 
-    .box {
-        padding: calc(2.5*var(--spacing));
-    }
+    .box { padding: calc(2.5*var(--spacing)); }
 }
 
