@@ -1,7 +1,10 @@
-/* IMPROVEMENTS MADE FROM LAST ASSIGNMENT:
-1. 
-2.
+/*  IMPROVEMENTS MADE FROM LAST ASSIGNMENT FEEDBACK:
+
+1.  CSS nesting for better readability and organization
+    reminded from https://typography-interaction-2526.github.io/topic/css/#oh-also-nesting
+2.  CSS spacing variables for better layout consistency including --gutter, --spacing, and --negative-spacing
 3.  */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Paytone+One&display=swap');
 
@@ -16,6 +19,7 @@
 
     --transition: 0.4s ease-in-out;
     --gutter: calc(0.5*var(--spacing));
+    --negative-spacing: calc(2.5*var(--spacing));
 }
 
 html{scroll-behavior: smooth;}
@@ -91,7 +95,7 @@ a {
     align-items: center;
     min-block-size: 70vh;
     inline-size: 100%;
-    padding-block: calc(3*var(--spacing));
+    padding-block: var(--negative-spacing);
     /* margin-block: calc(1.2*var(--spacing)); */
     overflow: hidden;
 }
@@ -122,9 +126,9 @@ li {
     transform: rotate(calc(-1*var(--rotation)));
     }
 
-    ul {
+    /* ul {
         padding-block: calc(1.2*var(--spacing));
-    }
+    } */
 }
 
 /* ------ ARENA BLOCKS: EACH CONTENT TYPE STYLING */
@@ -132,7 +136,7 @@ li {
 /* to control the size of img */
 .image-controller {
     block-size: calc(6.5*var(--spacing));
-    border: 1.5em solid var(--background);
+    border: calc(2*var(--gutter))solid var(--background);
     aspect-ratio: 1/1;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -152,8 +156,8 @@ img {
 
 
 .text-controller {
-    padding: calc(0.6*var(--spacing));
-    padding-block-start: calc(2.7*var(--spacing));
+    padding: var(--gutter);
+    padding-block-start: var(--negative-spacing);
     max-inline-size: calc(26*var(--spacing));
     position: relative;
     text-align: left;
@@ -181,7 +185,7 @@ img {
     justify-self: center;
     box-shadow: var(--shadow);
     background: var(--background);
-    border: 0.8em solid var(--background);
+    border: var(--gutter) solid var(--background);
 
     img {
         inline-size: calc(3*var(--spacing));
@@ -193,15 +197,16 @@ img {
     }
 
     &:hover img {
-        transform: scale(1.2);
-        transition: var(--transition);
+        /* transform: scale(1.2); */
+        /* transition: var(--transition); */
         /* border: 0.2em solid var(--background); */
     
     }
 }
 
 .link-controller {
-    padding: calc(0.3*var(--spacing));
+    /* padding: calc(0.3*var(--spacing)); */
+    padding: var(--gutter);
     /* padding-block: calc(0.4*var(--spacing)); */
     max-inline-size: calc(8*var(--spacing));
     background: var(--background);
@@ -217,7 +222,7 @@ img {
     block-size: calc(6*var(--spacing));
     background: var(--background);
     padding: var(--gutter);
-    padding-block-start: calc(2.5*var(--spacing));
+    padding-block-start: var(--negative-spacing);
     text-align: left;
     align-self: center;
     position: relative;
@@ -256,7 +261,7 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-block-start: calc(3*var(--spacing));
+    padding-block-start: var(--negative-spacing);
     padding-block-end: var(--spacing);
 
     ul {
@@ -307,7 +312,6 @@ something is overriding my clutter interaction */
 button {
     padding-inline: calc(0.7*var(--spacing));
     padding-block: calc(0.4*var(--spacing));
-    /* box-shadow: var(--shadow); */
 
     &:hover {
         transition: var(--transition);
@@ -319,11 +323,11 @@ button {
 nav {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    gap: calc(0.6*var(--spacing));
+    gap: var(--gutter);
     justify-content: center;
     align-items: center;
-    padding-block-start: calc(3*var(--spacing));
-    padding-block-end: calc(0.3*var(--spacing));
+    padding-block-start: var(--negative-spacing);
+    padding-block-end: var(--gutter);
     position: sticky;
     bottom: 0;
     z-index: 10;
@@ -372,7 +376,7 @@ nav {
     }
 
     .box {
-        padding-block: calc(5*var(--spacing));
+        padding-block: calc(1.5*var(--negative-spacing));
         padding-inline: calc(1*var(--spacing));
     }
 }
@@ -382,14 +386,14 @@ nav {
     
     header {
         gap: calc(5*var(--spacing));
-        padding-block: calc(3*var(--spacing));
+        padding-block: var(--negative-spacing);
     }
 
     h1,
     h2 { transform: scale(1.5); }
 
     .box { 
-        padding-block: calc(6*var(--spacing));
+        padding-block: calc(2*var(--negative-spacing));
         padding-inline: calc(2*var(--spacing));
     }
 }
