@@ -73,8 +73,11 @@ h2 {
 h1 { font-size: calc(2.8*var(--spacing)); }
 h2 { font-size: calc(2.5*var(--spacing)); }
 
-p { max-inline-size: 90%; }
-/* p { max-inline-size: 50ch; } */
+p { max-inline-size: 50ch; }
+
+p:has(strong) {
+    padding-inline: var(--gutter);
+}
 
 strong { font-weight: 600; }
 
@@ -112,17 +115,19 @@ ul {
 /* li is representing each block of arena */
 li {
     transition: all 1s ease-in-out;
-    transform: rotate(var(--rotation)) translateY(var(--translation));
+    transform: rotate(var(--rotation))
+               translateY(var(--translation));
 
     &.rotate {
-        transform: rotate(calc(-0.3*var(--rotation))) translateY(calc(-0.1*var(--translation)));
+        transform: rotate(calc(-0.3*var(--rotation))) 
+                   translateY(calc(-0.1*var(--translation)));
         transition: all 1.2s ease-in-out;
     }
 }
 
 #section-all {
     li.rotate {
-    transform: rotate(calc(-1*var(--rotation)));
+    /* transform: rotate(calc(-1*var(--rotation))); */
     }
 
     /* ul {
@@ -357,7 +362,7 @@ nav {
 
     footer {
         flex-direction: row;
-        inline-size: 100%;
+        padding-inline: var(--spacing);
         justify-content: space-between;
     }
 
@@ -374,9 +379,17 @@ nav {
         padding-block: calc(1.5*var(--negative-spacing));
         padding-inline: calc(1*var(--spacing));
 
-        ul {
+        /* ul {
             max-inline-size: calc(40*var(--spacing));
-        }
+        } */
+    }
+
+    #image-blocks,
+    #embed-blocks,
+    #text-blocks,
+    #link-blocks,
+    #attachment-blocks {
+        max-inline-size: calc(40*var(--spacing));
     }
 }
 
