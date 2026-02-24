@@ -294,7 +294,6 @@ footer {
 
 .clutter li {
     margin: calc(-1*var(--spacing));
-    /* filter: grayscale(); */
 }
 
 .clutter li:hover,
@@ -302,8 +301,10 @@ li:hover {
     z-index: 2;
     transform: scale(1.2);
     transition: 0.5s ease-in-out;
-    /* filter: grayscale(0); */
 }
+
+/* !!!something is fishy around here
+something is overriding my clutter interaction */
 
 
 /* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
@@ -364,11 +365,11 @@ nav {
         justify-content: space-between;
     }
 
-    footer p {
+    address {
         margin-inline: var(--spacing);
     }
 
-    #controls {
+    nav {
         grid-template-columns: repeat(6, auto);
         grid-template-rows: repeat(1, auto);
         padding-block: var(--spacing);
