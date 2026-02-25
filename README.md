@@ -8,11 +8,11 @@
 
 <h2>Technical & Design Highlights</h2>
 
-<p> Data is pulled in real-time from the Are.na channel "Clutter is Design". The site categorizes blocks into Visuals, Notes, Links, Embeds, and Files.</p>
-<p><strong>API Integration:</strong> Uses a recursive `fetchJson` function and a `renderBlock` function to generate HTML for different media types.</p>
-<p><strong>Intersection Observer:</strong> Watches `li` elements and applies a `.rotate` class as they enter the viewport to trigger "back-to-place" animations on JavaScript</p>
-<p><strong>CSS Architecture:</strong> Employs CSS Nesting, variables for fluid scaling (`--spacing`), and `clip-path` for custom geometric shapes.</p>
-<p><strong>Filtering System:</strong> A sticky navigation bar toggles the `.active` class on sections to filter content without page reloads.</p>
+<p>- Data is pulled in real-time from the Are.na channel "Clutter is Design". The site categorizes blocks into Visuals, Notes, Links, Embeds, and Files.</p>
+<p><strong>- API Integration:</strong> Uses a recursive `fetchJson` function and a `renderBlock` function to generate HTML for different media types.</p>
+<p><strong>- Intersection Observer:</strong> Watches `li` elements and applies a `.rotate` class as they enter the viewport to trigger "back-to-place" animations on JavaScript</p>
+<p><strong>- CSS Architecture:</strong> Employs CSS Nesting, variables for fluid scaling (`--spacing`), and `clip-path` for custom geometric shapes.</p>
+<p><strong>- Filtering System:</strong> A sticky navigation bar toggles the `.active` class on sections to filter content without page reloads.</p>
 
 <h3>About me</h3>
 
