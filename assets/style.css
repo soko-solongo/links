@@ -306,6 +306,10 @@ footer {
     }
 }
 
+#channel-blocks {
+    padding-block: var(--negative-spacing);
+}
+
 /* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
 
 button {
