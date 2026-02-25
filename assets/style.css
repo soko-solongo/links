@@ -409,11 +409,15 @@ nav {
     }
 
     #image-blocks,
-    #embed-blocks,
     #text-blocks,
-    #link-blocks,
-    #attachment-blocks {
+    #link-blocks {
         max-inline-size: calc(40*var(--spacing));
+    }
+
+    #embed-blocks,
+    #attachment-blocks {
+        max-inline-size: calc(30*var(--spacing));
+        gap: var(--negative-spacing);
     }
 }
 
