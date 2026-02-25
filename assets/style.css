@@ -72,7 +72,7 @@ h2 {
 h1 { font-size: calc(2.8*var(--spacing)); }
 h2 { font-size: calc(2.5*var(--spacing)); }
 
-p { max-inline-size: 50ch; }
+p { max-inline-size: 60ch; }
 
 strong { font-weight: 600; }
 
@@ -157,7 +157,7 @@ img {
 .text-controller {
     padding: var(--gutter);
     padding-block-start: var(--negative-spacing);
-    max-inline-size: calc(26*var(--spacing));
+    /* max-inline-size: calc(26*var(--spacing)); */
     position: relative;
     background: var(--background);
     box-shadow: var(--shadow);
@@ -293,9 +293,10 @@ footer {
 
     li { 
         margin: calc(-1*var(--spacing)); 
+        transform: translateY(var(--translation));
 
         &.rotate {
-            transform: rotate(calc(-1*var(--rotation)));
+            transform: rotate(calc(-1*var(--rotation))) translateY(var(--translation));
         }
 
         &:hover {
