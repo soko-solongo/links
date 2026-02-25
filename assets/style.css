@@ -1,13 +1,16 @@
-/*  IMPROVEMENTS MADE FROM LAST ASSIGNMENT FEEDBACK:
-
+/* ------ SPECIFIC IMPROVEMENTS MADE FROM LAST ASSIGNMENT FEEDBACK:
 1.  CSS nesting for better readability and organization
     reminded from https://typography-interaction-2526.github.io/topic/css/#oh-also-nesting
-2.  CSS spacing variables for better layout consistency including --gutter, --spacing, and --negative-spacing
-3.  */
+2.  Created CSS spacing variables for layout consistency including --gutter, --spacing, and --negative-spacing, not just variables for color, and transition behaviors
+3.  Used appropriate semantic HTML tags like <address>, <nav>, <strong> etc. by avoiding divs, spans, and classes.
+*/
 
 
+/* ------ IMPORTING FONTS ------ */
 @import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Paytone+One&display=swap');
 
+
+/* ------ SETTING VARIABLES ------ */
 :root{
     --spacing: 1.5rem;
     --font-head: "Paytone One", sans-serif;
@@ -24,6 +27,8 @@
 
 html{scroll-behavior: smooth;}
 
+
+/* ------ ASSIGNING COLORS ON EACH SECTION BACKGROUND AND CORRESPONDING TITLES ------ */
 #section-all header { color: #ff431d; }
 #section-all .box   { background: #1472FF; }
 
@@ -42,8 +47,8 @@ html{scroll-behavior: smooth;}
 #section-attachment header { color: #ff6c6c; }
 #section-attachment .box   { background: #5cecdd; }
 
-/* button colors matching their corresponding section box */
-/* ATTRIBUTION: */
+/* ------ SETTING EACH BUTTON COLORS ------ */
+/* ATTRIBUTION: The use of "data-target" concept has been attributed in html*/
 [data-target="section-all"] { background: #1472FF; }
 [data-target="section-image"] { background: #d497e0; }
 [data-target="section-embed"] { background: #ff8fa7; }
@@ -51,6 +56,8 @@ html{scroll-behavior: smooth;}
 [data-target="section-link"] { background: #ffb296; }
 [data-target="section-attachment"] { background: #5cecdd; }
 
+
+/* ------ BASE STYLING ------ */
 body {
     font-family: var(--font-body);
     font-size: calc(0.7*var(--spacing));
@@ -62,7 +69,7 @@ body {
     justify-items: center;
 }
 
-/* ------ TEXT SIZES AND STYLES FOR H1, H2, AND P */
+/* ------ TEXT SIZES AND STYLES FOR TYPOGRAPHY */
 h1,
 h2 {
     font-family: var(--font-head);
@@ -129,9 +136,9 @@ li {
     }
 }
 
-/* ------ ARENA BLOCKS: EACH CONTENT TYPE STYLING */
+/* ------ ARENA BLOCKS: EACH CONTENT TYPE/BLOCK STYLING */
 
-/* to control the size of img */
+/* Images */
 .image-controller {
     block-size: calc(6.5*var(--spacing));
     border: calc(2*var(--gutter))solid var(--background);
@@ -153,7 +160,7 @@ img {
     object-fit: cover;
 }
 
-
+/* Texts */
 .text-controller {
     padding: var(--gutter);
     padding-block-start: var(--negative-spacing);
@@ -176,6 +183,7 @@ img {
     }
 }
 
+/* Embeds */
 .embed-controller {
     display: flex;
     flex-direction: column;
@@ -207,6 +215,7 @@ img {
     }
 }
 
+/* Links */
 .link-controller {
     padding: var(--gutter);
     max-inline-size: calc(8*var(--spacing));
@@ -218,6 +227,7 @@ img {
     inline-size: auto;
 }
 
+/* Attachments */
 .pdf-controller {
     inline-size: calc(10*var(--spacing));
     block-size: calc(6*var(--spacing));
@@ -256,7 +266,9 @@ img {
     margin-block: var(--spacing);
 }
 
-/* ------ ADDITIONAL STYLING */
+/* ------ ADDITIONAL STYLING ------ */
+
+/* wobbly text container of h1 and h2 */
 header {
     display: flex;
     flex-direction: column;
@@ -286,7 +298,7 @@ footer {
     padding-block: var(--spacing);
 }
 
-/* ------ CREATING THE CLUTTER IN HERO SECTION */
+/* ------ CREATING THE CLUTTER IN LANDING SECTION */
 .clutter {
     gap: calc(-1*var(--spacing));
     overflow: initial;
@@ -310,7 +322,6 @@ footer {
     padding-block: var(--negative-spacing);
 }
 
-/* ------ NEW CODE LINES FROM ERIC'S LOOM VIDEO */
 
 button {
     padding-inline: calc(0.7*var(--spacing));
@@ -349,15 +360,11 @@ nav {
     }
 }
 
-/* ------ MEDIA QUERIES */
+/* ------ MEDIA QUERIES ------ */
 @media (width > 900px) {
     :root {
         font-size: 110%;
         --gutter: calc(0.6*var(--spacing));
-    }
-
-    body {
-        /* margin-inline: 3%; */
     }
 
     header {
@@ -383,10 +390,6 @@ nav {
     .box {
         padding-block: calc(1.5*var(--negative-spacing));
         padding-inline: calc(1*var(--spacing));
-
-        /* ul {
-            max-inline-size: calc(40*var(--spacing));
-        } */
     }
 
     #image-blocks,

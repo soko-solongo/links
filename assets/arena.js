@@ -3,8 +3,8 @@ let myUsername = 'soko-mungunsukh' // For linking to your profile.
 let ownerUsername = 'kinza-ghanchi' // For linking to the channel owner's profile.
 
 
-// First, let’s lay out some *functions*, starting with our basic metadata:
-	let placeChannelInfo = (channelData) => {
+// First, let’s lay out some *functions*, starting with our basic metadata (title + link)
+let placeChannelInfo = (channelData) => {
 	let channelTitle = document.querySelector('#channel-title')
 	let channelLink = document.querySelector('#channel-link')
 
