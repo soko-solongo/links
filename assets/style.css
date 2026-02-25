@@ -375,6 +375,18 @@ nav {
     100% { transform: scale(1) rotate(0deg); }
 }
 
+/* scroll-me nudge on the landing section */
+.scroll-me {
+    animation: scroll 1s ease-in-out 2s backwards;
+    repeat: no-repeat;
+}
+
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-60px); }
+    100% { transform: translateY(0); }
+}
+
 
 /* ------ MEDIA QUERIES ------ */
 @media (width > 900px) {
