@@ -1,3 +1,6 @@
+// ATTRIBUTION: The following code structure, functions, and comments are from T&I 2526 Course Curriculum: Class Demo on Are.na API. I have adjusted the code to fit my website's structure and design.
+// SOURCE: https://typography-interaction-2526.github.io/week/18/#lets-try-it-out
+
 let channelSlug = 'clutter-is-design' // The “slug” is just the end of the URL. It's channel title
 let myUsername = 'soko-mungunsukh' // For linking to your profile.
 let ownerUsername = 'kinza-ghanchi' // For linking to the channel owner's profile.
@@ -23,6 +26,7 @@ let renderBlock = (blockData) => {
     let embedBlocks = document.querySelector('#embed-blocks')
     let attachmentBlocks = document.querySelector('#attachment-blocks')
 
+	// Links!
 	if (blockData.type == 'Link') {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
@@ -53,6 +57,7 @@ let renderBlock = (blockData) => {
 
 	}
 
+	// Texts!
 	else if (blockData.type == 'Text') {
 		let textItem =
 			`
@@ -66,6 +71,7 @@ let renderBlock = (blockData) => {
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
+	// Attachments!
 	else if (blockData.type == 'Attachment') {
 		let contentType = blockData.attachment.content_type // Save us some repetition.
 
@@ -158,12 +164,10 @@ let renderBlock = (blockData) => {
 	}
 
 
+//  FOR MY DESIGN, I didn't use this info, so I commented it out. But here’s how you could render the channel owner and yourself as users, with a simple function for both (since they have the same data structure):
 
-// A function to display the owner/collaborator info:
-// !!! NEED TO FIGURE OUT THIS SECTION FOR FOOTER
 // let renderUser = (userData) => {
 // 	let channelUsers = document.querySelector('#channel-users') // Container.
-
 // 	let userAddress =
 // 		`
 // 		<address>
@@ -171,19 +175,12 @@ let renderBlock = (blockData) => {
 // 			<p><a href="https://are.na/${ userData.slug }">Are.na profile ↗</a></p>
 // 		</address>
 // 		`
-
 // 	channelUsers.insertAdjacentHTML('beforeend', userAddress)
 // }
 
 
 
 // Finally, a helper function to fetch data from the API, then run a callback function with it:
-// let fetchJson = (url, callback) => {
-// 	fetch(url, { cache: 'no-store' })
-// 		.then((response) => response.json())
-// 		.then((json) => callback(json))
-// }
-
 let fetchJson = (url, callback, pageResponses = []) => {
   fetch(url, { cache: 'no-store' })
     .then((response) => response.json())
@@ -214,18 +211,17 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
 })
 
 // Get your info to put with mine:
-fetchJson(`https://api.are.na/v3/users/${myUsername}/`, (json) => {
+// fetchJson(`https://api.are.na/v3/users/${myUsername}/`, (json) => {
 	// renderUser(json) // Pass this to the same function, no nesting.
-})
+// })
 
 // Get your info to put with the owner's:
-fetchJson(`https://api.are.na/v3/users/${ownerUsername}/`, (json) => {
+// fetchJson(`https://api.are.na/v3/users/${ownerUsername}/`, (json) => {
 	// renderUser(json) // Pass this to the same function, no nesting.
-})
+// })
 
 // And the data for the blocks:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=position_desc`, (json) => {
-	console.log(json) // See what we get back.
 
 	// Loop through the nested `.data` array (list).
 	json.data.forEach((blockData) => {
@@ -233,6 +229,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 	})
+
 
 
 // ATTRIBUTION: the following sectionObserver code structure is from T&I 2526 course curriculum: https://typography-interaction-2526.github.io/topic/javascript/#watching-for-scrolling
@@ -243,7 +240,7 @@ let rotateBlocks = document.querySelectorAll('li') // Gets all of them.
 rotateBlocks.forEach((block) => {
 	// ATTRIBUTION: the following code is generating random numbers and learned from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 	//                   Math.floor(Math.random() * (max - min + 1)) + min
-	let randomRotation = Math.floor(Math.random() * (20 - (-20) + 1)) + (-20); // Random rotation between -20 and +20 degrees (including -20, 0, and +20).
+	let randomRotation = Math.floor(Math.random() * (20 - (-20) + 1)) + (-20); // Random rotation between -20 and +20 integer degrees (including -20, 0, and +20).
 	block.style.setProperty('--rotation', `${randomRotation}deg`)
 
 	let randomTranslation = Math.floor(Math.random() * (60 - (-60) + 1)) + (-60); // Random translation between -60px and +60px across Y (vertical axis).
