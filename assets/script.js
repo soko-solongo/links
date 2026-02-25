@@ -1,4 +1,7 @@
-// ATTRIBUTION: Code in line 3-22 is from Eric's Loom voiceover instruction on creating buttons to filter blocks by type
+// ATTRIBUTION: Code in line 6-25 is from Eric's Loom voiceover instruction on creating buttons to filter blocks by type. Then, I adjusted the code to fit my website's structure and design. I also added a smooth scroll effect from the very top of the screen when clicking the buttons to enhance user experience.
+// SOURCE: 
+// https://www.loom.com/share/f4104997ee9a4f3489d17215dbf94fe6
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
 
 // let showAllButton = document.querySelector('#show-all')
 // let showImagesButton = document.querySelector('#show-images')
@@ -30,7 +33,7 @@ let sectionLink = document.querySelector('#section-link')
 let sectionEmbed = document.querySelector('#section-embed')
 let sectionAttachment = document.querySelector('#section-attachment') 
 
-// select specific buttons
+// selecting specific buttons to filter by type to its specific section by data-target
 let showAllButton = document.querySelector('[data-target="section-all"]')
 let showImageButton = document.querySelector('[data-target="section-image"]')
 let showTextButton = document.querySelector('[data-target="section-text"]')
