@@ -83,7 +83,10 @@ p { max-inline-size: 60ch; }
 
 strong { font-weight: 600; }
 
-p:has(strong) { padding-inline: var(--gutter);}
+p:has(strong) { 
+    padding-inline: var(--gutter);
+    max-inline-size: 42ch;
+}
 
 a { 
     transition: color var(--transition);
@@ -100,7 +103,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-block-size: 100vh;
+    min-block-size: 80vh;
     inline-size: 100vw;
     padding-block: var(--negative-spacing);
     overflow: hidden;
@@ -359,6 +362,19 @@ nav {
         transition: var(--transition);
     }
 }
+
+/* animation on text under the title */
+.dance {
+    animation: dance 1s ease-in-out 1s backwards;
+}
+
+@keyframes dance {
+    0% { transform: scale(0.95);}
+    30% { transform: scale(1) rotate(3deg); }
+    60% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
 
 /* ------ MEDIA QUERIES ------ */
 @media (width > 900px) {
