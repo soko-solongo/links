@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="assets/reset.css" rel="stylesheet">
 		<link href="assets/style.css" rel="stylesheet">
-        <script defer src="assets/arena.js"></script>
-        <script defer src="assets/script.js"></script>
+        <script defer src="assets/arena.js"></script> 
+        <script defer src="assets/script.js"></script> 
 	</head>
 	<body>
 		<main>
@@ -197,8 +197,11 @@
                 </div>
             </section>
 
-            <!-- ATTRIBUTION:  -->
+            <!-- ATTRIBUTION: I had to "data-target" concept for navigating with buttons because the whole website is only one single page (if I created multiple pages on each content type, I don't have to use data-target). I am hiding and displaying the <sections> one at a time with the help of Javascript.-->
+            <!-- SOURCE: https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes -->
+            <!-- EXPLANATION: I am using the "data-target" attribute to specify which section each button should display when clicked. The JavaScript will read the value of "data-target" and show the corresponding section while hiding the others. This allows for a single-page application feel, where users can navigate between different content types without needing to load new pages.-->
             <nav>
+                <!----- data-[custom-name]="value" -->
                 <button data-target="section-all">All</button>
                 <button data-target="section-image">Visuals</button>
                 <button data-target="section-text">Notes</button>

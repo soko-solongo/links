@@ -48,7 +48,7 @@ html{scroll-behavior: smooth;}
 #section-attachment .box   { background: #5cecdd; }
 
 /* ------ SETTING EACH BUTTON COLORS ------ */
-/* ATTRIBUTION: The use of "data-target" concept has been attributed in html*/
+/* ATTRIBUTION: The use of "data-target" concept has been attributed in HTML Code Line 200*/
 [data-target="section-all"] { background: #1472FF; }
 [data-target="section-image"] { background: #d497e0; }
 [data-target="section-embed"] { background: #ff8fa7; }
